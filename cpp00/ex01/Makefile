@@ -6,13 +6,14 @@
 #    By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 14:46:28 by hchaguer          #+#    #+#              #
-#    Updated: 2023/10/13 15:24:33 by hchaguer         ###   ########.fr        #
+#    Updated: 2023/10/15 17:04:15 by hchaguer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 name = phonebook
 
 SRC = PhoneBook.cpp\
+		contact.cpp\
 		main.cpp
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
