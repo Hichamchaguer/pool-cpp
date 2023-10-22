@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:05:05 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/10/13 14:45:29 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/10/20 21:25:00 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 #include <cctype>
 #include <string>
 
-using namespace std;
-
-string  toUpper(string str)
+std::string  toUpper(std::string str)
 {
     int i = 0;
 
@@ -31,14 +29,14 @@ string  toUpper(string str)
 int main(int ac, char **av)
 {
     if (ac == 1)
-        cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *"<< endl;
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *"<< std::endl;
     else {
         int i = 1;
         while (i < ac)
         {
-            cout << toUpper(av[i]) << " ";
+            std::cout << toUpper(av[i]);
             i++;
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 }
