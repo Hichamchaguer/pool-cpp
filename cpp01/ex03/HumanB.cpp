@@ -2,9 +2,7 @@
 #include "Weapon.hpp"
 #include <iostream>
 
-HumanB::HumanB() { }
-HumanB::HumanB(std::string n, Weapon wep) : Name(n), w(wep) { }; 
-
+HumanB::HumanB(std::string n) : Name(n), p(NULL) { }; 
 
 HumanB::~HumanB() { }
 
@@ -18,7 +16,15 @@ void  HumanB::setHumanB(std::string name)
     this->Name = name;
 }
 
+void HumanB::setWeapon(Weapon &w){ 
+
+    this->p = &w;
+}
+
 void HumanB::attack()
 {
-    std::cout << this->Name << " attacks with their " << std::endl;
+    if (p)
+        std::cout << this->Name << " attacks with their " << p->getType() << std::endl;
+    else  
+        std::cout << this->Name << " attacks with their " << std::endl;
 }
