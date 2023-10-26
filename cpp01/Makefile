@@ -15,7 +15,7 @@ name = BraiiiiiiinnnzzzZ
 SRC = main.cpp\
 	Zombie.cpp\
     newZombie.cpp\
-#randomChump.cpp
+	randomChump.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

@@ -12,9 +12,10 @@
 
 #include "Zombie.hpp"
 
+Zombie* newZombie(std::string name) {
 
-Zombie* Zombie::newZombie(std::string name) {
-
-    // return new Zombie(name);
-    std::cout << this->name << std::endl;
+    Zombie *z = new Zombie;
+    z->set_name(name);
+    z->announce();
+    return (z);
 }

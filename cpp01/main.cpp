@@ -11,13 +11,12 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <iostream>
-
 
 int main()
 {
-    Zombie z("hich");
+    Zombie *z = newZombie("hicham");
+    randomChump("test");
 
-    z.announce();
+    delete z;
     return 0;
 }
