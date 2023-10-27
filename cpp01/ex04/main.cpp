@@ -1,19 +1,26 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 
-int main()
-{
-   std::ifstream ifs("file.txt");
+std::string replace_all(std::string str, const std::string& from, const std::string& to) {
 
-   int dst, dst2;
+    std::string result;
+    int pos = 0;
+    int lastPos = 0;
+    while ((pos = str.find(from, lastPos)) != std::string::npos)
+    {
+      result += str.substr(lastPos, pos - lastPos);
+      result += to;
+      lastPos = pos + from.length();
+    }
+    result += str.substr(lastPos);
+    return result;
+}
 
-   ifs >> dst >> dst2;
+int main () {
 
-   std::cout << dst << " " << dst2 << std::endl;
-   ifs.close();
+  
+   std::cout << replace_all("this is a test", "t", "a")<< std::endl;
 
-   std::ofstream ofs("test.out");
-
-   ofs << "this is a test " << std::endl;
-   ofs.close();
+    return 0;
 }
