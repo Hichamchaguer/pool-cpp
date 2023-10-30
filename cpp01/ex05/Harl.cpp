@@ -12,6 +12,8 @@
 
 #include "Harl.hpp"
 
+
+Harl::Harl() { }
 void Harl::debug() {
     std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!"<< std::endl;
 }
@@ -23,4 +25,19 @@ void Harl::warning() {
 }
 void Harl::error() {
      std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+}
+void   Harl::complain(std::string level) {
+
+    void (Harl::*complain[4])(void) = {&Harl::debug, &Harl::warning, &Harl::error, &Harl::info};
+    std::string tab[4] = {"debug", "info", "warning", "error"};
+
+    for (int i = 0; i < 4; i++) {
+
+        if (level == tab[i]){
+
+            (this->*complain[i])();
+            return ;
+        }
+    } 
+    std::cout << "invalid arg" << std::endl;
 }

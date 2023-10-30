@@ -20,13 +20,14 @@
 class Harl {
   
     private:
-             
-    public:
-        void   complain(std::string level);
         void debug();
         void info();
         void warning();
         void error();
+             
+    public:
+        Harl();
+        void   complain(std::string level);
 };
 
 #endif

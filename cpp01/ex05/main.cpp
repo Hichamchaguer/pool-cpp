@@ -12,13 +12,11 @@
 
 #include "Harl.hpp"
 
-int main()
+int main(int ac, char **av)
 {
+    if (ac == 1 || ac > 2)
+        return 1;
     Harl h;
-
-    h.debug();
-    h.warning();
-    h.error();
-    h.info();
+    h.complain(av[1]);
     return 0;
 }
