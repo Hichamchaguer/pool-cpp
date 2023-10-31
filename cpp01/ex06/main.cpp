@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 11:55:50 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/10/30 13:38:56 by hchaguer         ###   ########.fr       */
+/*   Created: 2023/10/30 12:55:40 by hchaguer          #+#    #+#             */
+/*   Updated: 2023/10/30 13:40:15 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
-
-#include <iostream>
-#include <string>
-
-
-class Harl {
-  
-    private:
-        void debug();
-        void info();
-        void warning();
-        void error();
-             
-    public:
-        Harl();
-        ~Harl();
-        void   complain(std::string level);
-};
-
-#endif
+#include "Harl.hpp"
+int main(int ac, char **av)
+{
+    if (ac == 1 || ac > 2)
+        return 1;
+    
+    Harl h;
+    
+    h.complain(av[1]);
+    return 0;
+}

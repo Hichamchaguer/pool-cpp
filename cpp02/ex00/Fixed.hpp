@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 11:55:50 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/10/30 13:38:56 by hchaguer         ###   ########.fr       */
+/*   Created: 2023/10/30 15:02:14 by hchaguer          #+#    #+#             */
+/*   Updated: 2023/10/30 15:03:14 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#ifndef Fixed_HPP
+#define Fixed_HPP
 
 #include <iostream>
-#include <string>
 
 
-class Harl {
-  
-    private:
-        void debug();
-        void info();
-        void warning();
-        void error();
-             
-    public:
-        Harl();
-        ~Harl();
-        void   complain(std::string level);
-};
 
 #endif
