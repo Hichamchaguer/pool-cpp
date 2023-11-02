@@ -15,6 +15,22 @@
 
 #include <iostream>
 
+class fixed {
 
+    private :
+
+        int value;
+        static int const n = 8;
+
+    public :
+
+        fixed();
+        ~fixed();
+        fixed(fixed const &test1);
+        int getRawBits() const;
+        void setRawBits(int const raw);
+        fixed& operator=(fixed const &t);
+
+};
 
 #endif

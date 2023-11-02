@@ -7,13 +7,22 @@ fixed::fixed() : value(0) {
 }
 
 
+fixed::fixed(int const rawBits)
+{
+    this->value = rawBits << this->fractionalBits;
+}
+
+fixed::fixed(float const rawBits)
+{
+    this->value = rawBits * (1 << this->fractionalBits);
+}
+
 fixed::fixed(fixed const &test1) {
 
     std::cout << "Copy constructor called" << std::endl;
     *this = test1;
     return ;
 }
-
 
 int fixed::getRawBits() const
 {
@@ -37,4 +46,23 @@ void fixed::setRawBits(int const raw)
 {
     this->value = raw;
 }
+
+float fixed::toFloat( void ) const
+{
+    return (this->value / (1 << this->fractionalBits));
+}
+
+int fixed::toInt( void ) const
+{
+    return (this->value >> this->fractionalBits);
+}
+
+std::ostream& operator<<(std::ostream &o, fixed const &fixed)
+{
+    o << fixed.toFloat();
+    return (o);
+}
+
+
+
 
