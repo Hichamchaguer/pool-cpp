@@ -19,7 +19,6 @@ fixed::fixed(float const rawBits)
 
 fixed::fixed(fixed const &test1) {
 
-    // std::cout << "Copy constructor called" << std::endl;
     *this = test1;
     return ;
 }
@@ -69,12 +68,12 @@ bool fixed::operator!=(fixed const &t)
 
 fixed fixed::operator+(fixed const &t)
 {
-    return fixed(this->value + t.value);
+    return fixed (toFloat() + t.toFloat());
 }
 
 fixed fixed::operator-(fixed const &t)
 {
-    return fixed(this->value - t.value);
+    return fixed (toFloat() - t.toFloat());
 }
 
 fixed fixed::operator*(fixed const &t)
@@ -84,7 +83,7 @@ fixed fixed::operator*(fixed const &t)
 
 fixed fixed::operator/(fixed const &t)
 {
-    return fixed(this->value / t.value);
+   return fixed (toFloat() / t.toFloat());
 }
 
 fixed& fixed::operator++()
