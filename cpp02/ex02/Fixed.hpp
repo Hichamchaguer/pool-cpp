@@ -32,7 +32,13 @@ class fixed {
         fixed operator*(fixed const &t);
         fixed operator/(fixed const &t);
         fixed& operator++();
+        fixed& operator--();  
         fixed operator++(int);
+        fixed operator--(int);
+        static fixed& min(fixed &a, fixed &b);
+        static fixed& max(fixed &a, fixed &b);
+        static const fixed& min(fixed const &a, fixed const &b);
+        static const fixed& max(fixed const &a, fixed const &b);
         float toFloat( void ) const;
         int toInt( void ) const;
 

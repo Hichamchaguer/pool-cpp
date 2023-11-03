@@ -1,3 +1,4 @@
+
 #include "Fixed.hpp"
 
 fixed::fixed() : value(0) { 
@@ -38,52 +39,52 @@ fixed& fixed::operator=(fixed const &t)
 
 bool fixed::operator>(fixed const &t)
 {
-    return (this->value > t.getRawBits());
+    return (this->value > t.value);
 }
 
 bool fixed::operator<(fixed const &t)
 {
-    return (this->value < t.getRawBits());
+    return (this->value < t.value);
 }
 
 bool fixed::operator>=(fixed const &t)
 {
-    return (this->value >= t.getRawBits());
+    return (this->value >= t.value);
 }
 
 bool fixed::operator<=(fixed const &t)
 {
-    return (this->value <= t.getRawBits());
+    return (this->value <= t.value);
 }
 
 bool fixed::operator==(fixed const &t)
 {
-    return (this->value == t.getRawBits());
+    return (this->value == t.value);
 }
 
 bool fixed::operator!=(fixed const &t)
 {
-    return (this->value != t.getRawBits());
+    return (this->value != t.value);
 }
 
 fixed fixed::operator+(fixed const &t)
 {
-    return fixed(this->value + t.getRawBits());
+    return fixed(this->value + t.value);
 }
 
 fixed fixed::operator-(fixed const &t)
 {
-    return fixed(this->value - t.getRawBits());
+    return fixed(this->value - t.value);
 }
 
 fixed fixed::operator*(fixed const &t)
 {
-    return fixed(this->value * t.getRawBits());
+    return fixed (toFloat() * t.toFloat());
 }
 
 fixed fixed::operator/(fixed const &t)
 {
-    return fixed(this->value / t.getRawBits());
+    return fixed(this->value / t.value);
 }
 
 fixed& fixed::operator++()
@@ -92,10 +93,23 @@ fixed& fixed::operator++()
     return *this;
 }
 
+fixed& fixed::operator--()
+{
+    --this->value;
+    return *this;
+}
+
 fixed fixed::operator++(int)
 {
-    fixed f(this->value);
-    value++;
+    fixed f(*this);
+    this->value++;
+    return f;
+}
+
+fixed fixed::operator--(int)
+{
+    fixed f(*this);
+    this->value--;
     return f;
 }
 
@@ -111,12 +125,44 @@ void fixed::setRawBits(int const raw)
 
 float fixed::toFloat( void ) const
 {
-    return (this->value / (1 << this->fractionalBits));
+    return (static_cast<float>(this->value) / (1 << this->fractionalBits));
 }
 
 int fixed::toInt( void ) const
 {
     return (this->value >> this->fractionalBits);
+}
+
+fixed& fixed::min(fixed &a, fixed &b)
+{
+    if (a.value < b.value)
+        return a;
+    else
+        return b;
+}
+
+const fixed& fixed::min(fixed const &a, fixed const &b)
+{
+    if (a.value < b.value)
+        return a;
+    else
+        return b;
+}
+
+const fixed& fixed::max(fixed const &a, fixed const &b)
+{
+    if (a.value > b.value)
+        return a;
+    else
+        return b;
+}
+
+fixed& fixed::max(fixed &a, fixed &b)
+{
+    if (a.value > b.value)
+        return a;
+    else
+        return b;
 }
 
 std::ostream& operator<<(std::ostream &o, fixed const &fixed)
