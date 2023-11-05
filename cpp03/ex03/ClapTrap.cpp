@@ -14,12 +14,12 @@
 
 ClapTrap::ClapTrap()
 { 
-    std::cout << "default constractor called " << std::endl;
+    //std::cout << "default constractor called " << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string const& name) : Name(name), Points(100), Pts_Energy(50), Attack(30) 
 { 
-    std::cout << "constructor called " << std::endl;
+    //std::cout << "constructor called " << std::endl;
 }
 
 std::string ClapTrap::get_ClapTrap()
@@ -40,7 +40,7 @@ ClapTrap& ClapTrap::operator=(ClapTrap &clapTrap)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "destractor called " << std::endl;
+    //std::cout << "destractor called " << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)

@@ -11,25 +11,37 @@
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
-#include "ClapTrap.cpp"
-
 
 DiamondTrap::DiamondTrap()
 {
-    std::cout << "constrictor called " << std::endl;
+    //std::cout << "constrictor called " << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string &name) : Name(name)
+DiamondTrap::DiamondTrap(std::string const name) : Name(name)
 {
-    ClapTrap::Name = name + "_clap_name";
+    ClapTrap::Name = name + "_Clap_name";
+    FragTrap::Points = Points;
+
 }
 
 DiamondTrap::~DiamondTrap()
 {
-    std::cout << "districtor called " << std::endl;
+   // std::cout << "destrictor called " << std::endl;
+}
+
+DiamondTrap::DiamondTrap(DiamondTrap &d)
+{
+    //std::cout << "copy constractor called " << std::endl;
+    *this = d;
 }
 
 void DiamondTrap::whoAmI()
 {
-    std::cout << this->Name << std::endl;
+    std::cout << "diamond " << this->Name << " is " << ClapTrap::Name << std::endl;
+}
+
+std::ostream& operator<<(std::ostream &o, DiamondTrap &diamond)
+{
+    o << diamond.get_ClapTrap();
+    return o;
 }

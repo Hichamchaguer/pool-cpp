@@ -50,7 +50,7 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    std::cout << "ClapTrap " <<this->Name<< " has " << amount << std::endl;
+    std::cout << "ClapTrap " << this->Name << " has " << amount << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)

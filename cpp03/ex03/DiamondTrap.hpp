@@ -17,6 +17,7 @@
 #include <string>
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
 
 class DiamondTrap : public FragTrap, public ScavTrap {
@@ -26,7 +27,8 @@ class DiamondTrap : public FragTrap, public ScavTrap {
         
     public :
         DiamondTrap();
-        DiamondTrap(std::string &name);
+        DiamondTrap(std::string const name);
+        DiamondTrap( DiamondTrap &d);
         ~DiamondTrap();
         void whoAmI();
         

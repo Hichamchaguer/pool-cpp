@@ -14,12 +14,12 @@
 
 FragTrap::FragTrap()
 {
-    std::cout << "Fragtrap's default constrictor called " << std::endl;
+    //std::cout << "Fragtrap's default constrictor called " << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-    std::cout << "Fragtrap's default destrictor called " << std::endl;
+    //std::cout << "Fragtrap's default destrictor called " << std::endl;
 }
 
 void FragTrap::highFivesGuys(void)

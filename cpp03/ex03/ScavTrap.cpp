@@ -14,12 +14,12 @@
 
 ScavTrap::ScavTrap()
 {
-    std::cout << "scavtrap's constrictor called " << std::endl;
+    //std::cout << "scavtrap's constrictor called " << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "scavtrap's destractor called " << std::endl;
+   // std::cout << "scavtrap's destractor called " << std::endl;
 }
 
 void ScavTrap::guardGate()

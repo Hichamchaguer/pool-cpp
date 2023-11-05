@@ -15,6 +15,8 @@ name = DiamondTrap
 SRC = main.cpp\
 		ClapTrap.cpp\
 		DiamondTrap.cpp\
+		ScavTrap.cpp\
+		FragTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
