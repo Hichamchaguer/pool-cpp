@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 23:20:53 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/04 23:50:09 by hchaguer         ###   ########.fr       */
+/*   Created: 2023/11/05 02:34:40 by hchaguer          #+#    #+#             */
+/*   Updated: 2023/11/05 03:38:24 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
+
+#include <iostream>
+#include <string>
+#include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
-{
-    std::cout << "scavtrap's constrictor called " << std::endl;
-}
 
-ScavTrap::~ScavTrap()
-{
-    std::cout << "scavtrap's destractor called " << std::endl;
-}
+class DiamondTrap : public FragTrap, public ScavTrap {
+    
+    private :
+        std::string Name;
+        
+    public :
+        DiamondTrap();
+        DiamondTrap(std::string &name);
+        ~DiamondTrap();
+        void whoAmI();
+        
+};
 
-void ScavTrap::guardGate()
-{
-    std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
-}
-
-std::ostream& operator<<(std::ostream &o, ScavTrap &scav)
-{
-    o << scav.get_ClapTrap();
-    return o;
-}
+#endif

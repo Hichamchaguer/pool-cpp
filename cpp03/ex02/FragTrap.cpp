@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 23:20:53 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/04 23:50:09 by hchaguer         ###   ########.fr       */
+/*   Created: 2023/11/04 23:55:50 by hchaguer          #+#    #+#             */
+/*   Updated: 2023/11/04 23:59:05 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap()
+FragTrap::FragTrap()
 {
-    std::cout << "scavtrap's constrictor called " << std::endl;
+    std::cout << "Fragtrap's default constrictor called " << std::endl;
 }
 
-ScavTrap::~ScavTrap()
+FragTrap::~FragTrap()
 {
-    std::cout << "scavtrap's destractor called " << std::endl;
+    std::cout << "Fragtrap's default destrictor called " << std::endl;
 }
 
-void ScavTrap::guardGate()
+void FragTrap::highFivesGuys(void)
 {
-    std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+    std::cout << "hight five guys !!" << std::endl;
 }
 
-std::ostream& operator<<(std::ostream &o, ScavTrap &scav)
+std::ostream& operator<<(std::ostream &o, FragTrap &frag)
 {
-    o << scav.get_ClapTrap();
+    o << frag.get_ClapTrap();
     return o;
 }

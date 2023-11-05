@@ -1,31 +1,30 @@
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/05 02:42:46 by hchaguer          #+#    #+#             */
+/*   Updated: 2023/11/05 02:42:46 by hchaguer         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
 #include <iostream>
 #include <string>
+#include "ClapTrap.hpp"
 
 
-class ClapTrap {
-  
-    private :
-    
-        std::string Name;
-        int  Points;
-        int  Pts_Energy;
-        int  Attack;
-        
+class ScavTrap : public ClapTrap
+{     
     public :
-
-        ClapTrap();
-        ClapTrap(std::string const &name);
-        ClapTrap(ClapTrap const &clapTrap);
-        ~ClapTrap();
-        std::string get_ClapTrap();
-        ClapTrap& operator=(ClapTrap &clapTrap);
-        void attack(const std::string& target);
-        void takeDamage(unsigned int amount);
-        void beRepaired(unsigned int amount);
+        ScavTrap();
+        ~ScavTrap();
+        void guardGate();
 };
 
-std::ostream& operator<<(std::ostream &o, ClapTrap const &clap);
+std::ostream& operator<<(std::ostream &o, ClapTrap &scav);
 #endif

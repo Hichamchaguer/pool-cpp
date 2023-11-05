@@ -1,9 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/04 23:38:06 by hchaguer          #+#    #+#             */
+/*   Updated: 2023/11/04 23:38:06 by hchaguer         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ClapTrap.hpp"
+
 ClapTrap::ClapTrap()
 { 
     std::cout << "default constractor called " << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string const& name) : Name(name), Points(10), Pts_Energy(10), Attack(0) 
+ClapTrap::ClapTrap(std::string const& name) : Name(name), Points(100), Pts_Energy(50), Attack(20) 
 { 
     std::cout << "constructor called " << std::endl;
 }
@@ -11,6 +25,11 @@ ClapTrap::ClapTrap(std::string const& name) : Name(name), Points(10), Pts_Energy
 std::string ClapTrap::get_ClapTrap()
 {
     return (this->Name);
+}
+
+void ClapTrap::set_name(std::string name)
+{
+    this->Name =  name;
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap &clapTrap) 

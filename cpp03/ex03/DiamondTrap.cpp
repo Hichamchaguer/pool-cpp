@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 23:20:53 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/04 23:50:09 by hchaguer         ###   ########.fr       */
+/*   Created: 2023/11/05 02:36:49 by hchaguer          #+#    #+#             */
+/*   Updated: 2023/11/05 03:39:08 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
+#include "ClapTrap.cpp"
 
-ScavTrap::ScavTrap()
+
+DiamondTrap::DiamondTrap()
 {
-    std::cout << "scavtrap's constrictor called " << std::endl;
+    std::cout << "constrictor called " << std::endl;
 }
 
-ScavTrap::~ScavTrap()
+DiamondTrap::DiamondTrap(std::string &name) : Name(name)
 {
-    std::cout << "scavtrap's destractor called " << std::endl;
+    ClapTrap::Name = name + "_clap_name";
 }
 
-void ScavTrap::guardGate()
+DiamondTrap::~DiamondTrap()
 {
-    std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+    std::cout << "districtor called " << std::endl;
 }
 
-std::ostream& operator<<(std::ostream &o, ScavTrap &scav)
+void DiamondTrap::whoAmI()
 {
-    o << scav.get_ClapTrap();
-    return o;
+    std::cout << this->Name << std::endl;
 }
