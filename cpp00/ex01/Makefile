@@ -6,7 +6,7 @@
 #    By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 14:46:28 by hchaguer          #+#    #+#              #
-#    Updated: 2023/10/15 17:04:15 by hchaguer         ###   ########.fr        #
+#    Updated: 2023/11/06 16:38:57 by hchaguer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,16 +16,16 @@ SRC = PhoneBook.cpp\
 		contact.cpp\
 		main.cpp
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = c++
+CXX = c++
 
 all : $(name)
 
 $(name) : $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(name)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(name)
 
 clean :
 	rm -rf $(OBJ)

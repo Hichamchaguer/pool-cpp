@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 14:49:04 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/10/22 15:20:11 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:49:09 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 
 PhoneBook::PhoneBook() : index(0) {}
-
 
 void  PhoneBook::add() {
 
@@ -112,11 +111,9 @@ void  PhoneBook::add() {
     index++;
 }
 
-bool    PhoneBook::isValid(std::string &str) {
+bool    PhoneBook::isValid(std::string str) {
 
-    int i = 0;
-
-    for (i = 0; i < str.length(); i++)
+    for (long unsigned int i = 0; i < str.length(); i++)
     {
         if (isalpha(str[i]) != 0)
             return false;
@@ -124,9 +121,9 @@ bool    PhoneBook::isValid(std::string &str) {
     return true;
 }
 
-bool    PhoneBook::whiteSpaces(std::string &str)
+bool    PhoneBook::whiteSpaces(std::string str)
 {
-    for (int i = 0; i < str.length(); i++)
+    for (long unsigned int i = 0; i < str.length(); i++)
     {
         if (std::isspace(str[i]))
             return true;
@@ -134,30 +131,34 @@ bool    PhoneBook::whiteSpaces(std::string &str)
     return false;
 }
 
-bool PhoneBook::is_NonPrintable(std::string &str) {
+bool PhoneBook::is_NonPrintable(std::string str) {
     
-    for (int i = 0; i < str.length(); i++) {
+    for (long unsigned int i = 0; i < str.length(); i++) {
         if (std::iscntrl(str[i]))
             return true;
     }
     return false;
 }
 
-int     PhoneBook::getIndex(std::string str)
+int     PhoneBook::getIndex()
 {
-    int index = -1;
+    int index = 0;
     int good = 0;
     do
     {
-        std::cout << prompt ;
+        std::cout << "enter the index or press -1 to exit search field : ";
         std::cin >> index;
-        if (std::cin.good())
+        if (std::cin.eof()) {
+            exit (EXIT_FAILURE);
+        }
+        if (std::cin.good()){
             good = 1;
+        }
         else
         {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "invalid index try again !\n";
+            std::cout << "invalid index !\n";
         }
     } while (!good);
     return (index);
@@ -169,7 +170,7 @@ void    PhoneBook::displyContacts()
         int n;
         
         std::cout << std::setw(10) << "     index" << " | " 
-        << std::setw(10) << "first name" << " | " << " last name" << " | " << "  nickName" << " | " << std::endl;
+        << std::setw(10) << " firstname" << " | " << "  lastname" << " | " << "  nickName" << " | " << std::endl;
         
         int max = index < 8 ? index : 8;
         for (i = 0; i < max; i++) {
@@ -190,7 +191,7 @@ void    PhoneBook::displyContacts()
         }
         while (true)
         {
-            n = get_index("choose the index to dispaly or press -1 to exit : ");
+            n = getIndex();
              std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             if (n == -1)
                 break;

@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 02:43:14 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/05 02:43:15 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/05 23:17:53 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class FragTrap : virtual public ClapTrap {
   
     public : 
         FragTrap();
+        FragTrap(std::string &name);
         ~FragTrap();
         void highFivesGuys(void);  
 };

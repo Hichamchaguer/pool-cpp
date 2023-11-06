@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:40:08 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/10/22 15:20:09 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:46:45 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@
 #include <iostream>
 #include <iomanip>
 #include <ctype.h>
-#include <unistd.h>
 #include <cstdlib>
-#include <fstream>
-#include <type_traits>
 #include <limits>
 
 

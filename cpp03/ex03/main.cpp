@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 02:34:32 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/05 03:36:35 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/05 23:16:20 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@ int main()
 {
     DiamondTrap d("hicham");
 
-    d.whoAmI();
     return 0;
 }
