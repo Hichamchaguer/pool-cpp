@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:38:59 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/10/22 17:06:56 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/07 17:37:42 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int main()
 {
-    Zombie *z = newZombie("hicham");
     randomChump("test");
+    Zombie *z = newZombie("hicham");
 
     delete z;
     return 0;

@@ -9,7 +9,7 @@ void Zombie::set_name(std::string Name) {
 
 Zombie::~Zombie() {
 
-    std::cout << "destructor called " << std::endl;
+    std::cout << this->name <<" destructor called " << std::endl;
 }
 
 void    Zombie::announce(void) {

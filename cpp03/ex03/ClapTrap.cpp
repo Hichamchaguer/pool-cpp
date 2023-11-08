@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 02:33:35 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/05 02:54:13 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/06 22:52:40 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ ClapTrap::ClapTrap()
 ClapTrap::ClapTrap(std::string const& name) : Name(name), Points(100), Pts_Energy(50), Attack(30) 
 { 
     //std::cout << "constructor called " << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap &clapTrap)
+{
+    *this = clapTrap;
 }
 
 std::string ClapTrap::get_ClapTrap()

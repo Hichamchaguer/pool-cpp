@@ -19,15 +19,15 @@ SRC = main.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 
 all : $(name)
 
 $(name) : $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(name)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(name)
 
 clean :
 	rm -rf $(OBJ)

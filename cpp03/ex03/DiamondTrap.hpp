@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 02:34:40 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/05 03:38:24 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/06 22:50:37 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class DiamondTrap : public FragTrap, public ScavTrap {
     public :
         DiamondTrap();
         DiamondTrap(std::string const name);
-        DiamondTrap( DiamondTrap &d);
+        DiamondTrap(DiamondTrap &d);
         ~DiamondTrap();
         void whoAmI();
         

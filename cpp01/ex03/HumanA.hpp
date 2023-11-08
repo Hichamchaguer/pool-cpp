@@ -24,8 +24,8 @@ class HumanA {
         Weapon &w;
     public :
         HumanA(std::string n, Weapon &w);
-        std::string getHumanA();
-        void setHumanA(std::string name);
+        std::string &getHumanA();
+        void setHumanA(std::string &name);
         ~HumanA();
         void attack();
 

@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:55:28 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/10/30 13:50:48 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/08 02:22:41 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,40 @@ void Harl::error() {
      std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 void   Harl::complain(std::string level) {
-
+        
     void (Harl::*complain[4])(void) = {&Harl::debug, &Harl::warning, &Harl::info, &Harl::error};
-    std::string tab[4] = {"debug", "warning", "info", "error"};
 
-    for (int i = 0; i < 4; i++) {
+    int state = -1;
+    if (level == "debug")
+        state = 0;
+    if (level == "warning")
+        state = 1;
+    if (level == "info")
+        state = 2;
+    if (level == "error")
+        state = 3;
 
-        if (level == tab[i]){
-        int j = i;
-            for (j = i; j < 4; j++)
-            {
-                (this->*complain[j])();
-            }
-            return ;
-        }
-    } 
-    std::cout << "invalid arg" << std::endl;
+    switch (state)
+    {
+        case 0:
+            (this->*complain[0])();
+            (this->*complain[1])();
+            (this->*complain[2])();
+            (this->*complain[3])();
+            break;
+        case 1:
+            (this->*complain[1])();
+            (this->*complain[2])();
+            (this->*complain[3])();
+            break;
+        case 2:
+            (this->*complain[2])();
+            (this->*complain[3])();
+            break;
+        case 3:
+            (this->*complain[3])();
+            break;
+        default :
+            std::cout << "invalid arg" << std::endl;
+    }
 }

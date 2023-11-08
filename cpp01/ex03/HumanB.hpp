@@ -17,7 +17,6 @@
 #include <iostream>
 #include "Weapon.hpp"
 
-
 class HumanB {
     private :
         std::string Name;
@@ -26,8 +25,8 @@ class HumanB {
         HumanB(std::string n);
         ~HumanB();
         void setWeapon(Weapon &w);
-        std::string getHumanB();
-        void  setHumanB(std::string name);
+        std::string &getHumanB();
+        void  setHumanB(std::string &name);
        void attack();
 
 };

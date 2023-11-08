@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/22 15:44:29 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/07 17:40:35 by hchaguer         ###   ########.fr       */
+/*   Created: 2023/11/08 00:39:35 by hchaguer          #+#    #+#             */
+/*   Updated: 2023/11/08 02:46:40 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef REPLACE_HPP
+#define REPLACE_HPP
 
-Zombie::Zombie() {}
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdlib>
 
-void Zombie::set_name(std::string Name) 
-{
-    this->name = Name;
-}
+std::string replace_all(std::string str, const std::string& from, const std::string& to);
 
-Zombie::~Zombie() {
 
-    std::cout << this->name <<"'s destructor called " << std::endl;
-}
-
-void    Zombie::announce(void) {
-    
-    std::cout << this->name <<" BraiiiiiiinnnzzzZ..." << std::endl;
-}
+#endif

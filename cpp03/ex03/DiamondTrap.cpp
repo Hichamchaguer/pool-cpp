@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 02:36:49 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/05 23:17:20 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/06 22:56:59 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ DiamondTrap::~DiamondTrap()
    // std::cout << "destrictor called " << std::endl;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap &d)
+DiamondTrap::DiamondTrap(DiamondTrap &d) : ClapTrap(d), FragTrap(d), ScavTrap(d)
 {
     //std::cout << "copy constractor called " << std::endl;
     *this = d;

@@ -6,7 +6,7 @@
 #    By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 15:00:52 by hchaguer          #+#    #+#              #
-#    Updated: 2023/10/30 15:02:09 by hchaguer         ###   ########.fr        #
+#    Updated: 2023/11/06 22:44:47 by hchaguer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,14 @@ SRC = main.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all : $(name)
 
 $(name) : $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(name)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(name)
 
 clean :
 	rm -rf $(OBJ)

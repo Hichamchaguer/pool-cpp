@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 02:33:52 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/05 02:33:54 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/06 22:51:46 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ClapTrap {
 
         ClapTrap();
         ClapTrap(std::string const &name);
-        ClapTrap(ClapTrap const &clapTrap);
+        ClapTrap(ClapTrap &clapTrap);
         ~ClapTrap();
         std::string get_ClapTrap();
         void set_name(std::string const name);

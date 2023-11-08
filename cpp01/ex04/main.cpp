@@ -6,33 +6,33 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 11:47:15 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/10/28 11:47:17 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/08 02:34:27 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
-#include <string>
+#include "replace.hpp"
 
-std::string replace_all(std::string str, const std::string& from, const std::string& to) {
-
-    std::string result;
-    int pos = 0;
-    int lastPos = 0;
-    while ((pos = str.find(from, lastPos)) != std::string::npos)
-    {
-      result += str.substr(lastPos, pos - lastPos);
-      result += to;
-      lastPos = pos + from.length();
+int main(int argc, char* argv[]) {
+    if (argc != 4) {
+        std::cerr << "Usage: ./program filename s1 s2" << std::endl;
+        return 1;
     }
-    result += str.substr(lastPos);
-    return result;
-}
 
-int main () {
+    std::ifstream inputFile(argv[1]);
+    std::ofstream outputFile((std::string(argv[1]) + ".replace").c_str());
 
-  
-   std::cout << replace_all("this is a test", "t", "a")<< std::endl;
+    if (!inputFile.is_open() || !outputFile.is_open()) {
+        std::cerr << "Error opening files!" << std::endl;
+        return 1;
+    }
+
+    std::string line;
+    while (std::getline(inputFile, line)) {
+        outputFile << replace_all(line, argv[2], argv[3]) << std::endl;
+    }
+
+    inputFile.close();
+    outputFile.close();
 
     return 0;
 }

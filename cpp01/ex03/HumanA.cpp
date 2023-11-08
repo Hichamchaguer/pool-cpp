@@ -17,12 +17,12 @@ HumanA::HumanA(std::string n, Weapon &wep) : Name(n), w(wep) { };
 
 HumanA::~HumanA() { }
 
-std::string HumanA::getHumanA() {
+std::string &HumanA::getHumanA() {
 
     return (this->Name);
 }
 
-void HumanA::setHumanA(std::string name)
+void HumanA::setHumanA(std::string &name)
 {
     this->Name = name;
 }
