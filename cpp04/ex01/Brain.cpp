@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 16:43:33 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/16 00:45:31 by hchaguer         ###   ########.fr       */
+/*   Created: 2023/11/13 08:36:57 by hchaguer          #+#    #+#             */
+/*   Updated: 2023/11/14 02:45:49 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Brain.hpp"
 
-int main()
+Brain::Brain()
 {
-    ClapTrap clap("hicham");
+    std::cout << "brain's default constrictor called" << std::endl;
+}
 
+Brain::~Brain()
+{
+    std::cout << "brain's destractor called" << std::endl;
+}
 
-    //std::cout << clap.get_Name() << std::endl;
+Brain::Brain(Brain const &b)
+{
+    *this = b;    
+}
 
-    clap.attack("ahmed");
-    clap.takeDamage(200);
-    clap.beRepaired(200);
-    
-    return 0;
+std::string Brain::get_idea() const
+{
+    return (this->ideas[100]);
+}
+
+Brain& Brain::operator=(Brain const &b)
+{
+    this->ideas[100] = b.get_idea();
+    return *this;     
 }

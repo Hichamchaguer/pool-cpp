@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:44:48 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/04 00:35:09 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/15 10:25:20 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,19 @@ class ClapTrap {
         std::string Name;
         int  Points;
         int  Pts_Energy;
-        int  Attack;
+        int  AttackDamage;
         
     public :
 
         ClapTrap();
-        ClapTrap(std::string const &name);
-        ClapTrap(ClapTrap const &clapTrap);
+        ClapTrap(std::string name);
+        ClapTrap(ClapTrap const &clap);
         ~ClapTrap();
-        std::string get_ClapTrap();
-        ClapTrap& operator=(ClapTrap &clapTrap);
+        std::string const &get_Name() const;
+        ClapTrap& operator=(ClapTrap const &clapTrap);
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
 };
 
-std::ostream& operator<<(std::ostream &o, ClapTrap const &clap);
 #endif

@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 02:43:00 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/05 02:43:02 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/15 10:06:23 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@
 #include "ClapTrap.hpp"
 
 
-class ScavTrap :virtual public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {     
     public :
         ScavTrap();
         ~ScavTrap();
+        ScavTrap(std::string name);
+        ScavTrap(const ScavTrap& Scav);
+        ScavTrap& operator=(ScavTrap & Scav);
         void guardGate();
 };
 
-std::ostream& operator<<(std::ostream &o, ClapTrap &scav);
 #endif

@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:52:48 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/05 00:00:33 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/14 03:25:06 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int main()
 {
-    FragTrap f;
+    FragTrap f("hicham");
 
     f.highFivesGuys();
+    std::cout << f.get_Name() << std::endl;
     return 0;
 }

@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 23:53:32 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/14 03:24:31 by hchaguer         ###   ########.fr       */
+/*   Created: 2023/11/13 08:36:57 by hchaguer          #+#    #+#             */
+/*   Updated: 2023/11/14 00:36:15 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#include "Brain.hpp"
 
-#include <iostream>
-#include <string>
-#include "ClapTrap.hpp"
+Brain::Brain()
+{
+    std::cout << "brain's default constrictor called" << std::endl;
+}
 
+Brain::~Brain()
+{
+    std::cout << "brain's destractor called" << std::endl;
+}
 
-class FragTrap : public ClapTrap {
-  
-    public : 
-        FragTrap();
-        ~FragTrap();
-        FragTrap(std::string name);
-        FragTrap(FragTrap const &frag);
-        FragTrap& operator=(FragTrap &frag);
-        void highFivesGuys(void);  
-};
+Brain::Brain(Brain const &b)
+{
+    *this = b;
+}
 
-
-#endif
+// Brain& Brain::operator=(Brain const &b)
+// {
+   
+// }

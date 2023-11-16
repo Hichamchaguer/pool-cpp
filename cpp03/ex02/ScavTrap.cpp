@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:20:53 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/15 10:39:06 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/15 10:40:56 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ScavTrap::ScavTrap()
 {
-    std::cout << "Scavtrap's constrictor called " << std::endl;
+    std::cout << "scavtrap's default constrictor called " << std::endl;
     this->Points = 100;
     this->Pts_Energy = 50;
     this->AttackDamage = 20;
@@ -22,7 +22,7 @@ ScavTrap::ScavTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    std::cout << "Scavtrap's constrictor para called " << std::endl;
+    std::cout << "scavtrap's constrictor called " << std::endl;
     this->Points = 100;
     this->Pts_Energy = 50;
     this->AttackDamage = 20;

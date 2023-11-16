@@ -5,24 +5,25 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/05 02:34:05 by hchaguer          #+#    #+#              #
-#    Updated: 2023/11/14 04:50:48 by hchaguer         ###   ########.fr        #
+#    Created: 2023/11/13 06:26:44 by hchaguer          #+#    #+#              #
+#    Updated: 2023/11/13 08:20:54 by hchaguer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-name = DiamondTrap
+name = Animal
 
 SRC = main.cpp\
-		ClapTrap.cpp\
-		DiamondTrap.cpp\
-		ScavTrap.cpp\
-		FragTrap.cpp
+	   Animal.cpp\
+	   Cat.cpp\
+	   Dog.cpp\
+	   WrongAnimal.cpp\
+	   WrongCat.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all : $(name)
 

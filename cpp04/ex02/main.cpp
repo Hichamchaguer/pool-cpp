@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 23:53:32 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/14 03:24:31 by hchaguer         ###   ########.fr       */
+/*   Created: 2023/11/13 06:27:05 by hchaguer          #+#    #+#             */
+/*   Updated: 2023/11/14 14:23:06 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "Brain.hpp"
 
-#include <iostream>
-#include <string>
-#include "ClapTrap.hpp"
+int main()
+{
+    //const Animal* j = new Animal();
+    const Animal* i = new Cat();
 
-
-class FragTrap : public ClapTrap {
-  
-    public : 
-        FragTrap();
-        ~FragTrap();
-        FragTrap(std::string name);
-        FragTrap(FragTrap const &frag);
-        FragTrap& operator=(FragTrap &frag);
-        void highFivesGuys(void);  
-};
-
-
-#endif
+    //std::cout << j->get_type() << std::endl;
+    std::cout << i->get_type() << std::endl;
+    //delete j;//should not create a leak
+    delete i;
+    
+    return 0;
+}
