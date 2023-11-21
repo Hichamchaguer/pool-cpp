@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 08:33:37 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/20 12:51:13 by hchaguer         ###   ########.fr       */
+/*   Created: 2023/11/13 08:14:27 by hchaguer          #+#    #+#             */
+/*   Updated: 2023/11/13 08:21:38 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCat_HPP
 
 #include <iostream>
 #include <string>
+#include "WrongAnimal.hpp"
 
-class Brain {
 
-    private :
+class WrongCat : public WrongAnimal {
 
-        std::string ideas[100];
-    public :
-    
-        Brain();
-        Brain(Brain const &b);
-        Brain& operator=(Brain const &b);
-        ~Brain();
-    
-        std::string get_idea(int i) const;
-        void set_idea(std::string k, int i);
+    public : 
+
+        WrongCat();
+        WrongCat(WrongCat const &cat);
+        void makeSound() const;
+        WrongCat& operator=(WrongCat const &cat);
+        ~WrongCat();
+        
 };
 
 #endif

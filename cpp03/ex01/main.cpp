@@ -14,12 +14,14 @@
 
 int main()
 {
-   // ClapTrap c("ddcc");
-    ScavTrap s("ddd");
-    //ClapTrap *p = new ScavTrap("hicham");
-
-   // std::cout << c.get_Name() << std::endl;
-    std::cout << s.get_Name() << std::endl;
-    //std::cout << p->get_Name() << std::endl;
+    ClapTrap a;
+    ScavTrap b;
+    a  = b;
+    std::cout << b.get_Name() << '\n';
+    b.attack("Target");
+    b.takeDamage(2);
+    b.attack("Target2");
+    ScavTrap c(b);
+    c.attack("The");
     return 0;
 }

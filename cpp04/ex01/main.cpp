@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 06:27:05 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/13 13:19:25 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/20 14:58:53 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,38 @@
 #include "Brain.hpp"
 
 int main()
-{
-    // const Animal* j = new Dog();
-    // const Animal* i = new Cat();
-
-    // std::cout << j->get_type() << std::endl;
-    // std::cout << i->get_type() << std::endl;
-    // delete j;//should not create a leak
-    // delete i;
-    
-    int n = 4;
+{    
+    int n = 2;
     Animal *a[n];
 
-    for (int i = 0; i <  (n / 2); i++)
+    for (int i = 0; i < (n / 2); i++)
     {
-        std::cout << "i : " << i <<std::endl;
         a[i] = new Dog();
     }
 
     for (int i = (n / 2); i < n; i++)
     {
-        
-        std::cout << "i : " << i <<std::endl;
-            a[i] = new Cat();
+        a[i] = new Cat();
     }
 
     for (int i = 0; i < n; i++)
+    {
+        a[i]->makeSound();
+    }
+    
+    for (int i = 0; i < n; i++)
         delete a[i];
+
+ 
+    // Cat c;
+    // c.get_brain()->set_idea("hicham", 0);
+    // Cat s = c;
+    // std::cout <<"c : " << c.get_brain()->get_idea(0) << std::endl;
+    // std::cout <<"s : " << s.get_brain()->get_idea(0) << std::endl;
+    
+    // s.get_brain()->set_idea("ahmed", 0);
+    // std::cout << "c : "<<c.get_brain()->get_idea(0) << std::endl;
+    // std::cout << "s : "<<s.get_brain()->get_idea(0) << std::endl;
+
     return 0;
 }

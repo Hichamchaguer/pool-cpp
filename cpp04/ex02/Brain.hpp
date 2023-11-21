@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 08:33:37 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/13 08:41:05 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/18 02:16:41 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,13 @@ class Brain {
 
         std::string ideas[100];
     public :
+    
         Brain();
-        ~Brain();
         Brain(Brain const &b);
-       //Brain& operator=(Brain const &b);
+        Brain& operator=(Brain const &b);
+        ~Brain();
+    
+        std::string get_idea(int i) const;
 };
 
 #endif

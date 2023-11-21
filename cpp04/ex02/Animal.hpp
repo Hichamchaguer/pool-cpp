@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 06:28:33 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/14 00:35:54 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:06:06 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 
 class Animal {
+    
     protected :
         std::string Type;
         
@@ -25,10 +26,11 @@ class Animal {
         
         Animal();
         Animal(Animal const &animal);
-        std::string get_type() const;
-        virtual void makeSound() const = 0;
         Animal& operator=(Animal const &animal);
         virtual ~Animal();
+        
+        virtual void makeSound() const = 0;
+        std::string get_type() const;
 };
 
 #endif

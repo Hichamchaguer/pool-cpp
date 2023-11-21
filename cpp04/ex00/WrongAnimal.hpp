@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 08:15:26 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/13 08:18:09 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:02:42 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ class WrongAnimal {
         
         WrongAnimal();
         WrongAnimal(WrongAnimal const &animal);
-        std::string get_type() const;
-        void makeSound() const;
         WrongAnimal& operator=(WrongAnimal const &animal);
         ~WrongAnimal();
+        
+        std::string get_type() const;
+        void makeSound() const;
 };
 
 #endif

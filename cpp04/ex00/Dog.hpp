@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 06:31:28 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/13 07:50:08 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:18:19 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ class Dog : public Animal {
 
         Dog();
         Dog(Dog const &dog);
-        void makeSound() const;
         Dog& operator=(Dog const &dog);
         ~Dog();
+        
+        void makeSound() const;
         
 };
 

@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 06:31:06 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/13 07:50:17 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:02:29 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ class Cat : public Animal {
 
         Cat();
         Cat(Cat const &cat);
-        void makeSound() const;
         Cat& operator=(Cat const &cat);
         ~Cat();
+        
+        void makeSound() const;
         
 };
 

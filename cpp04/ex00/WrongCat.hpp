@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 08:14:27 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/13 08:21:38 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:02:50 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ class WrongCat : public WrongAnimal {
 
         WrongCat();
         WrongCat(WrongCat const &cat);
-        void makeSound() const;
         WrongCat& operator=(WrongCat const &cat);
         ~WrongCat();
+        
+        void makeSound() const;
         
 };
 

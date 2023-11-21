@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 06:31:06 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/13 10:11:20 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/20 12:57:47 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,20 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-
 class Cat : public Animal {
 
     private :
     
-        Brain *brain;
     public : 
+        Brain *brain;
 
         Cat();
         Cat(Cat const &cat);
-        void makeSound() const;
         Cat& operator=(Cat const &cat);
-        ~Cat();
+        virtual ~Cat();
+        
+        void makeSound() const;
+        Brain* get_brain();
         
 };
 

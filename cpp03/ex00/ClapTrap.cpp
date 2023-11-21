@@ -6,26 +6,26 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:55:08 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/16 00:53:05 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/16 17:17:24 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : Points(10), Pts_Energy(10), AttackDamage(0)
+ClapTrap::ClapTrap() : Hit_Points(10), Pts_Energy(10), AttackDamage(0)
 { 
     std::cout << "ClapTrap default constractor called " << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : Name(name), Points(10), Pts_Energy(10), AttackDamage(0) 
+ClapTrap::ClapTrap(std::string name) : Name(name), Hit_Points(10), Pts_Energy(10), AttackDamage(0) 
 { 
     std::cout << "ClapTrap constructor called " << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &clap)
 {
+    std::cout << "ClapTrap copy constructor called " << std::endl;
     *this = clap;
-    return ;
 }
 
 std::string const &ClapTrap::get_Name() const
@@ -35,10 +35,11 @@ std::string const &ClapTrap::get_Name() const
 
 ClapTrap& ClapTrap::operator=(ClapTrap const &clapTrap) 
 {
-    this->Name = clapTrap.Name;
-    this->Point = ClapTrap.points;
-    this->Pts_Energy = ClapTrap.Pts_Energy;
-    this->AttackDamage = ClapTrap.AttackDamage;
+    std::cout << "ClapTrap assignemet constructor called " << std::endl;
+     this->Name = clapTrap.Name;
+    this->Hit_Points = clapTrap.Hit_Points;
+    this->Pts_Energy = clapTrap.Pts_Energy;
+    this->AttackDamage = clapTrap.AttackDamage;
     
     return *this;
 }
@@ -50,37 +51,37 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(const std::string& target)
 {
-    if (this->Points > 0 || this->Pts_Energy > 0)
+    if (this->Hit_Points > 0 || this->Pts_Energy > 0)
     {
-        std::cout << "ClapTrap " << this->Name<< " attacks " << target <<", causing " << this->AttackDamage << " points of damage!" << " current Hit Point "<< this->Points<< std::endl;
+        std::cout << "ClapTrap " << this->Name<< " attacks " << target <<", causing " << this->AttackDamage << " points of damage!" << " current Hit Point "<< this->Hit_Points<< std::endl;
         this->Pts_Energy--;
         std::cout << this->Pts_Energy << std::endl;
     }
-    else if (this->Points <= 0 || this->Pts_Energy <= 0)
+    else if (this->Hit_Points <= 0 || this->Pts_Energy <= 0)
         std::cout << "ClapTrap " << this->Name << " dead" << std::endl;
     return ;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if (this->Points <= 0 && this->Pts_Energy <= 0)
+    if (this->Hit_Points <= 0 && this->Pts_Energy <= 0)
         std::cout << "ClapTrap " << this->Name << " has already dead !" << std::endl;
-    else if (this->Points && this->Pts_Energy)
+    else if (this->Hit_Points && this->Pts_Energy)
     {
-        this->Points -= amount;
-        if (this->Points < 0)
-            this->Points = 0;
-        std::cout << "ClapTrap " << this->Name << " has lost " << amount <<" current Hit Point "<< this->Points << std::endl;
+        this->Hit_Points -= amount;
+        if (this->Hit_Points < 0)
+            this->Hit_Points = 0;
+        std::cout << "ClapTrap " << this->Name << " has lost " << amount <<" current Hit Point "<< this->Hit_Points << std::endl;
     }
     return ;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (this->Pts_Energy > 0 || this->Points > 0)
+    if (this->Pts_Energy > 0 || this->Hit_Points > 0)
     {
-        this->Points += amount;
-        std::cout << "ClapTrap " << this->Name << " repaire " << amount << " current Hit Point "<< this->Points << std::endl;
+        this->Hit_Points += amount;
+        std::cout << "ClapTrap " << this->Name << " repaire " << amount << " current Hit Point "<< this->Hit_Points << std::endl;
         this->Pts_Energy--;
     }
     else

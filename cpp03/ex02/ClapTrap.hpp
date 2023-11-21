@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:53:00 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/15 10:25:43 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/16 17:20:31 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class ClapTrap {
     protected :
     
         std::string Name;
-        int  Points;
+        int  Hit_Points;
         int  Pts_Energy;
         int  AttackDamage;
         

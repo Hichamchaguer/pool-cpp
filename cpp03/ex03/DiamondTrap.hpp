@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 02:34:40 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/15 10:26:17 by hchaguer         ###   ########.fr       */
+/*   Updated: 2023/11/16 13:45:32 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include "ClapTrap.hpp"
 
 
-class DiamondTrap : public ScavTrap, public FragTrap {
+class DiamondTrap : public FragTrap, public ScavTrap {
     
     private :
         std::string Name;
@@ -31,7 +31,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
         DiamondTrap(DiamondTrap &d);
         void attack(const std::string& target);
         DiamondTrap& operator=(DiamondTrap &d);
-        ~DiamondTrap();
+        virtual ~DiamondTrap();
         void whoAmI();
         
 };
