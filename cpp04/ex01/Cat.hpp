@@ -22,8 +22,8 @@ class Cat : public Animal {
 
     private :
     
+    	Brain *brain;
     public : 
-        Brain *brain;
 
         Cat();
         Cat(Cat const &cat);
