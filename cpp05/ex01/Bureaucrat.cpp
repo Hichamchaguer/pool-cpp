@@ -69,6 +69,11 @@ void Bureaucrat::decrementing_grade()
     }
 }
 
+void Form::signForm() {
+
+    
+}
+
 Bureaucrat& Bureaucrat::operator=(Bureaucrat const &Bureaucrat)
 {
     this->Grade = Bureaucrat.getGrade();

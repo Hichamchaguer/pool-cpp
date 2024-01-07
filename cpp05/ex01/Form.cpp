@@ -50,6 +50,15 @@ int Form::getGrade_exec() const
     return this->Grade_exec;
 }
 
+void Form::beSigned(Bureaucrat &b)
+{
+    this->Etat = true;
+    if (b.getGrade() > this->Grade_sign)
+    {
+        throw Form::GradeTooLowException();
+        this->Etat = false;
+    }
+}
 
 std::ostream& operator<<(std::ostream &o, Form const &f)
 {
