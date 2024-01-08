@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 11:07:18 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/08 16:03:37 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/08 19:01:14 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include <string>
 
 
-class Form {
+class AForm {
 
 private:
 
@@ -30,11 +30,11 @@ const int Grade_sign;
 const int Grade_exec;
 
 public:
-  Form();
-  Form(const std::string name, const int sign, const int exec);
-  Form(Form const &f);
-  Form& operator=(Form const &f);
-  ~Form();
+  AForm();
+  AForm(const std::string name, const int sign, const int exec);
+  AForm(AForm const &f);
+  AForm& operator=(AForm const &f);
+  ~AForm();
 
 
   const std::string getName() const ;
@@ -64,7 +64,7 @@ public:
   };
 };
 
-std::ostream& operator<<(std::ostream &o, Form const &f);
+std::ostream& operator<<(std::ostream &o, AForm const &f);
 
 
 #endif
