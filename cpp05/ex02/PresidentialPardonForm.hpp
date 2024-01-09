@@ -15,7 +15,14 @@
 
 #include <iostream>
 #include <string>
+#include "Form.hpp"
 
-
+class PresidentialPardonForm : public Aform
+{
+    PresidentialPardonForm();
+    PresidentialPardonForm(const PresidentialPardonForm &p);
+    PresidentialPardonForm& operator=(const PresidentialPardonForm& p);
+    ~PresidentialPardonForm();
+};
 
 #endif

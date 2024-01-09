@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 11:07:18 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/08 19:01:14 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/09 01:02:58 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,24 @@ const std::string Name;
 bool Etat;
 const int Grade_sign;
 const int Grade_exec;
+std::string Target; 
 
 public:
+  
   AForm();
   AForm(const std::string name, const int sign, const int exec);
   AForm(AForm const &f);
   AForm& operator=(AForm const &f);
-  ~AForm();
+  virtual ~AForm();
 
 
-  const std::string getName() const ;
-  bool getEtat() const ;
+  const std::string getName() const;
+  bool getEtat() const;
   int getGrade_sign() const;
   int getGrade_exec() const;
   bool beSigned(Bureaucrat &b);
+  std::string getTarget() const;
+  virtual bool execute(Bureaucrat const & executor) const = 0;
   
   class GradeTooHighException : public std::exception
   {
@@ -61,6 +65,15 @@ public:
           return "Error : Grade too low";
       }
         
+  };
+
+  class signStateException : public std::exception {
+
+      public :
+        virtual const char* what() const throw()
+        {
+          return "Error : form is not sign";
+        }
   };
 };
 

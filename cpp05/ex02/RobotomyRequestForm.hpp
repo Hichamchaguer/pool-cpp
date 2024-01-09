@@ -14,6 +14,15 @@
 #define ROBOTOMYREQUESTtFORM_HPP
 
 #include <iostream>
+#include "Form.hpp"
 
+
+class RobotomyRequestForm : public Aform
+{
+    RobotomyRequestForm();
+    RobotomyRequestForm(const RobotomyRequestForm& r);
+    RobotomyRequestForm& operator=(const RobotomyRequestForm& r);
+    ~RobotomyRequestForm();
+}
 
 #endif

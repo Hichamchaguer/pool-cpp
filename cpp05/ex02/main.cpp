@@ -16,18 +16,7 @@
 
 int main()
 {
-    try
-    {
-        
-        Bureaucrat b("hicham", 1);
-        Form f("form1", 1, 3);
-
-        b.signForm(f);
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
+  
     
     return 0;
 }

@@ -69,7 +69,7 @@ void Bureaucrat::decrementing_grade()
     }
 }
 
-void Bureaucrat::signForm(Form &f) {
+void Bureaucrat::signForm(AForm &f) {
 
     try {
         
