@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 18:50:45 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/09 16:28:10 by hchaguer         ###   ########.fr       */
+/*   Created: 2024/01/09 18:49:04 by hchaguer          #+#    #+#             */
+/*   Updated: 2024/01/09 18:52:47 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREACTIONFORM_HPP
-#define SHRUBBERYCREACTIONFORM_HPP
+#ifndef INTERN_HPP
+#define INTERN_HPP
+
 
 #include <iostream>
-#include "Form.hpp"
-#include <fstream>
 
-class ShrubberyCreationForm : public AForm {
+
+class Intern {
 
     public :
-    ShrubberyCreationForm();
-    ShrubberyCreationForm(const std::string &target);
-    ShrubberyCreationForm(const ShrubberyCreationForm& s);
-    // ShrubberyCreationForm& operator=(const ShrubberyCreationForm& s);
-    ~ShrubberyCreationForm();
-
-    bool execute(Bureaucrat const & executor) const;
+        Intern();
+        Intern(Intern const &i);
+        Intern& operator=(Intern const &i);
+        ~Intern();
 };
 
 
