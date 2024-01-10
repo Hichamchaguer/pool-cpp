@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 18:47:29 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/09 21:15:46 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:52:43 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class PresidentialPardonForm : public AForm
     public :
         PresidentialPardonForm();
         PresidentialPardonForm(const PresidentialPardonForm &p);
-        // PresidentialPardonForm& operator=(const PresidentialPardonForm& p);
+        PresidentialPardonForm& operator=(const PresidentialPardonForm& p);
         ~PresidentialPardonForm();
 
         PresidentialPardonForm(const std::string &target);
@@ -31,6 +31,7 @@ class PresidentialPardonForm : public AForm
 
     class PardonCheckException : std::exception
     {
+        public :
         virtual const char* what() const throw() 
         {
             return ("has not been pardoned by Zaphod Beeblebrox");

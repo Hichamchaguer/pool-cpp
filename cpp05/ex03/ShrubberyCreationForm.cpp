@@ -34,13 +34,13 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& s) : A
 }
 
 
-// ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& s) 
-// {
-//     std::cout << "ShrubberyCreationForm operator overloaded called " << std::endl;
-//     // this->Etat = s.Etat;
-//     // this->Target = s.Target;
-//     return (*this);
-// }
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& s) 
+{
+    std::cout << "ShrubberyCreationForm operator overloaded called " << std::endl;
+    // this->Etat = s.Etat;
+    (void)s;
+    return (*this);
+}
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {

@@ -6,7 +6,7 @@
 #    By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/03 19:28:13 by hchaguer          #+#    #+#              #
-#    Updated: 2024/01/09 18:42:57 by hchaguer         ###   ########.fr        #
+#    Updated: 2024/01/10 16:23:38 by hchaguer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJ = $(SRC:.cpp=.o)
 
 CXX = c++
 
-CPPFLAGS = -Wall -Wextra -Werror
+CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
 
 
 all : $(NAME)

@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 19:34:33 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/04 21:49:26 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:36:06 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 Bureaucrat::Bureaucrat()
 {
-    // std::cout << "bureaucrat default constractor" << std::endl;
+    std::cout << "bureaucrat default constractor" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : Name(name), Grade(grade) { }
@@ -65,7 +65,7 @@ void Bureaucrat::decrementing_grade()
     }
     } catch (std::exception& e) {
 
-        std::cout <<e.what() << std::endl;
+        std::cout << e.what() << std::endl;
     }
 }
 
@@ -75,7 +75,10 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat const &Bureaucrat)
     return *this;
 }
 
-Bureaucrat::~Bureaucrat() { }
+Bureaucrat::~Bureaucrat() { 
+
+    std::cout << "Bureacrat destractor called " << std::endl;   
+}
 
 std::ostream& operator<<(std::ostream &o, Bureaucrat const &b)
 {

@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 18:50:34 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/09 19:42:42 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:53:00 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class RobotomyRequestForm : public AForm
     public :
         RobotomyRequestForm();
         RobotomyRequestForm(const RobotomyRequestForm& r);
-        // RobotomyRequestForm& operator=(const RobotomyRequestForm& r);
+        RobotomyRequestForm& operator=(const RobotomyRequestForm& r);
         ~RobotomyRequestForm();
     
         RobotomyRequestForm(const std::string &target);
@@ -32,11 +32,13 @@ class RobotomyRequestForm : public AForm
     
         class RobotomizedCheckException : std::exception
         {
-          virtual const char *what() const throw()
-          {
-            return ("Error : robotomy failed ");
-          }
-        };
+          public :
+          
+            virtual const char *what() const throw()
+            {
+              return ("Error : robotomy failed ");
+            }
+        };  
 };
 
 #endif

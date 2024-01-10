@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 18:49:09 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/09 21:23:56 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:52:56 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& r) : AForm(r
     *this = r;
 }
 
-// RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& r)
-// {
-//     std::cout << "RobotomyRequest copy assignment called " << std::endl;
-//     return (*this);
-// }
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& r)
+{
+    std::cout << "RobotomyRequest copy assignment called " << std::endl;
+    (void)r;
+    return (*this);
+}
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {

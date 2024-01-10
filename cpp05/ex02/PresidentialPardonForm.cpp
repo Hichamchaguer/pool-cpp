@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:47:56 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/09 21:18:54 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:52:40 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,11 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &p)
     *this = p;
 }
 
-// PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& p)
-// {
-    
-// }
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& p)
+{
+    (void)p;
+    return *this;    
+}
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {

@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 11:07:03 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/09 21:27:11 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:53:31 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ AForm::AForm(AForm const &f) : Name(""), Etat(false), Grade_sign(0), Grade_exec(
 AForm& AForm::operator=(AForm const &f)
 {
     this->Etat = f.Etat;
-    // this->Target = f.Target;
     return *this;
 }
 
