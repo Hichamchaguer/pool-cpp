@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 19:32:46 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/10 16:59:56 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/11 20:21:41 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ int main()
 {
     try
     {
-        Bureaucrat b("hicham", 1);
-        Form f("form1", 1, 3);
+        Bureaucrat b("hicham", 5);
+        Form f("form1", 6, 3);
 
+        // f.beSigned(b);
         b.signForm(f);
     }
     catch (std::exception &e)
