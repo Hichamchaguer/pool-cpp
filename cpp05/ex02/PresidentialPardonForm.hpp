@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 18:47:29 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/10 16:52:43 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/11 18:51:09 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class PresidentialPardonForm : public AForm
     class PardonCheckException : std::exception
     {
         public :
-        virtual const char* what() const throw() 
+        const char* what() const throw() 
         {
             return ("has not been pardoned by Zaphod Beeblebrox");
         } 

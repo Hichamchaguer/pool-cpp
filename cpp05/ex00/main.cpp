@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 19:32:46 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/04 21:51:55 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/11 19:01:41 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 
 int main()
 {
-    Bureaucrat b("hicham", 149);
+    Bureaucrat b("hicham", 2);
 
     try 
     {
+        b.incrementing_grade();
         if (b.getGrade() >= 1 && b.getGrade() <= 150)
+        {
             std::cout << b << std::endl;
+        }
         else if (b.getGrade() < 1)
             throw Bureaucrat::GradeTooHighException();
         else if (b.getGrade() > 150)

@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 18:50:34 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/10 16:52:01 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/11 18:51:57 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class RobotomyRequestForm : public AForm
     
         class RobotomizedCheckException : std::exception
         {
-          virtual const char *what() const throw()
+          const char *what() const throw()
           {
             return ("Error : robotomy failed ");
           }

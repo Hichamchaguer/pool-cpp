@@ -6,14 +6,13 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 19:34:33 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/08 16:13:43 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/10 22:07:03 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include <exception>
-#include <type_traits>
 
 
 Bureaucrat::Bureaucrat()

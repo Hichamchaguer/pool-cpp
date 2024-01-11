@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 19:32:46 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/09 21:25:39 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/10 22:58:10 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@
 int main()
 {
 
-    Bureaucrat b("hicham", 46);
+    Bureaucrat b("hicham", 2);
     
     // PresidentialPardonForm presid("name1");
 
-    RobotomyRequestForm robot("name2");
+    ShrubberyCreationForm robot("name2");
     
 
     try {
         
-        robot.beSigned(b);
+        // robot.beSigned(b);
         robot.execute(b);
     }
     catch (std::exception& e)

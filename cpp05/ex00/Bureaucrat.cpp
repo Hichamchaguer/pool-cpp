@@ -6,14 +6,12 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 19:34:33 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/10 16:36:06 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/11 18:53:30 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <exception>
-#include <type_traits>
-
 
 Bureaucrat::Bureaucrat()
 {
@@ -50,7 +48,7 @@ void Bureaucrat::incrementing_grade()
     }
     catch (std::exception& e)
     {
-        std::cout <<e.what() << std::endl;
+        std::cout << e.what() << std::endl;
     }
 }
 
@@ -75,7 +73,7 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat const &Bureaucrat)
     return *this;
 }
 
-Bureaucrat::~Bureaucrat() { 
+Bureaucrat::~Bureaucrat() {
 
     std::cout << "Bureacrat destractor called " << std::endl;   
 }

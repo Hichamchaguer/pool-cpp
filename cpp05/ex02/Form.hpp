@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 11:07:18 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/09 16:28:33 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/11 18:51:03 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ public:
   class GradeTooHighException : public std::exception
   {
     public:
-      virtual const char* what() const throw() 
+      const char* what() const throw() 
       {
         return "Error : Grade too High";
       }
@@ -60,7 +60,7 @@ public:
   class GradeTooLowException : public std::exception {
 
       public :
-      virtual const char* what() const throw() {
+      const char* what() const throw() {
 
           return "Error : Grade too low";
       }
@@ -70,7 +70,7 @@ public:
   class signStateException : public std::exception {
 
       public :
-        virtual const char* what() const throw()
+        const char* what() const throw()
         {
           return "Error : form is not sign";
         }

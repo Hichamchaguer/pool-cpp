@@ -6,7 +6,7 @@
 #    By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/03 19:28:13 by hchaguer          #+#    #+#              #
-#    Updated: 2024/01/05 11:06:36 by hchaguer         ###   ########.fr        #
+#    Updated: 2024/01/10 22:05:07 by hchaguer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ = $(SRC:.cpp=.o)
 
 CXX = c++
 
-CPPFLAGS = -Wall -Wextra -Werror
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 
 all : $(NAME)

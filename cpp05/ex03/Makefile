@@ -6,11 +6,11 @@
 #    By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/03 19:28:13 by hchaguer          #+#    #+#              #
-#    Updated: 2024/01/10 16:23:38 by hchaguer         ###   ########.fr        #
+#    Updated: 2024/01/11 19:08:52 by hchaguer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Form
+NAME = Intern
 
 SRC = Bureaucrat.cpp\
 	  Form.cpp\
@@ -24,7 +24,7 @@ OBJ = $(SRC:.cpp=.o)
 
 CXX = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 
 all : $(NAME)
