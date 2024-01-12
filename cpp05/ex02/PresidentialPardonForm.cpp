@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:47:56 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/10 16:52:40 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/12 23:38:16 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AFor
     std::cout << "PresidentialPardon parametric constructor called " << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &p)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &p) : AForm(p)
 {
     std::cout << "PresidentialPardon copy constructor called " << std::endl;
     *this = p;

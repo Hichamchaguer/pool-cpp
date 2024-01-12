@@ -17,12 +17,12 @@
 #include <iostream>
 #include <ostream>
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("", 145, 173, "")
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("", 145, 137, "")
 {
     std::cout << "ShrubberyCreationForm default constractor called " << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreationForm", 145, 173, target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreationForm", 145, 137, target)
 {
     std::cout << "Shrubbery parametric constractor" << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 19:34:33 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/11 18:53:30 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/12 22:53:39 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ Bureaucrat::Bureaucrat()
     std::cout << "bureaucrat default constractor" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string name, int grade) : Name(name), Grade(grade) { }
+Bureaucrat::Bureaucrat(const std::string name, int grade) : Name(name), Grade(grade) 
+{ 
+    std::cout << "bureaucrat parametric constractor " << name <<std::endl;
+}
 
 Bureaucrat::Bureaucrat(Bureaucrat const &bureaucrat)
 {
@@ -38,32 +41,21 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::incrementing_grade()
 {
-    try {
-        if (this->Grade >= 1)
-            this->Grade--;
-        if (this->Grade < 1) {
+    if (this->Grade >= 1)
+        this->Grade--;
+    if (this->Grade < 1) {
         
-            throw Bureaucrat::GradeTooHighException();
-        }
-    }
-    catch (std::exception& e)
-    {
-        std::cout << e.what() << std::endl;
+        throw Bureaucrat::GradeTooHighException();
     }
 }
 
 void Bureaucrat::decrementing_grade()
 {
-    try {
-        if (this->Grade <= 150)
-            this->Grade++;
-        if (this->Grade > 150) {
+    if (this->Grade <= 150)
+        this->Grade++;
+    if (this->Grade > 150) {
         
         throw Bureaucrat::GradeTooLowException();
-    }
-    } catch (std::exception& e) {
-
-        std::cout << e.what() << std::endl;
     }
 }
 
@@ -75,7 +67,7 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat const &Bureaucrat)
 
 Bureaucrat::~Bureaucrat() {
 
-    std::cout << "Bureacrat destractor called " << std::endl;   
+    std::cout << "Bureacrat destractor called " << this->Name <<std::endl;   
 }
 
 std::ostream& operator<<(std::ostream &o, Bureaucrat const &b)

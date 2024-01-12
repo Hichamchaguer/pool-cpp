@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 19:34:33 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/10 22:07:08 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/12 23:32:52 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,32 +41,21 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::incrementing_grade()
 {
-    try {
-        if (this->Grade >= 1)
-            this->Grade--;
-        if (this->Grade < 1) {
+    if (this->Grade >= 1)
+        this->Grade--;
+    if (this->Grade < 1) {
         
-            throw Bureaucrat::GradeTooHighException();
-        }
-    }
-    catch (std::exception& e)
-    {
-        std::cout <<e.what() << std::endl;
+        throw Bureaucrat::GradeTooHighException();
     }
 }
 
 void Bureaucrat::decrementing_grade()
 {
-    try {
-        if (this->Grade <= 150)
-            this->Grade++;
-        if (this->Grade > 150) {
+    if (this->Grade <= 150)
+        this->Grade++;
+    if (this->Grade > 150) {
         
         throw Bureaucrat::GradeTooLowException();
-    }
-    } catch (std::exception& e) {
-
-        std::cout << e.what() << std::endl;
     }
 }
 
@@ -98,21 +87,11 @@ Bureaucrat::~Bureaucrat() {
 
 void Bureaucrat::executeForm(AForm const &form)
 {
-   try {
     
-        if (form.execute(*this) == true)
-        {
-            std::cout << this->Name << " executed " << form.getName() << std::endl;
-        }
-        else 
-        {
-            throw AForm::signStateException();
-        }
-   } 
-   catch (std::exception &e) {
-   
-        std::cout << e.what() << std::endl;
-   }
+    if (form.execute(*this) == true)
+        std::cout << this->Name << " executed " << form.getName() << std::endl;
+    else 
+        throw AForm::signStateException();
 }
 
 std::ostream& operator<<(std::ostream &o, Bureaucrat const &b)
