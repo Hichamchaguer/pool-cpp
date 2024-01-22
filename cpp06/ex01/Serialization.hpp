@@ -1,11 +1,30 @@
-#ifndef  SERIALIZER_HPP
-#define  SERIALIZER_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Serialization.hpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/21 17:55:48 by hchaguer          #+#    #+#             */
+/*   Updated: 2024/01/21 17:55:48 by hchaguer         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+#ifndef  SERIALIZATION_HPP
+#define  SERIALIZATION_HPP
 
 
 #include <iostream>
+#include <stdint.h>
 
+typedef struct Data{
 
-#ifndef  Serializer 
+    int i;
+
+} Data;
+
+class  Serializer
 {
     public :
         Serializer();

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/01/21 22:05:06 by hchaguer          #+#    #+#              #
+#    Updated: 2024/01/21 22:05:06 by hchaguer         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = Serialization
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -20,3 +32,5 @@ clean :
 
 fclean : clean
 	rm -rf $(NAME)
+
+re : fclean all
