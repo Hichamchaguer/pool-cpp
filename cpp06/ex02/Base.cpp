@@ -6,13 +6,14 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:24:02 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/22 21:49:32 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/23 11:37:29 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 #include <cstddef>
 #include <ostream>
+#include <typeinfo>
 
 Base::~Base() { std::cout << "destractor Base called " << std::endl; }
 A::~A() { std::cout << "destractor A called " << std::endl; }
@@ -32,15 +33,17 @@ Base* Base::generate()
     
     switch (random)
     {
-    
         case 0 :
             b = new A();
+            std::cout << "---> " << b << std::endl;
             break;
         case 1 :
             b = new B();
+            std::cout << "---> " << b << std::endl;
             break;
         case 2 :
             b = new C();
+            std::cout << "---> " << b << std::endl;
             break;
     }
     return (b);
@@ -50,10 +53,14 @@ Base* Base::generate()
 
 void Base::identify(Base* p)
 {
-    Base* b = dynamic_cast<Base*>(p);
-    b->print();
-    if (b == NULL)
-        std::cout << "the instance is NULL " << std::endl;
+    if (dynamic_cast<A*>(p))
+        std::cout << "object A called" << std::endl;
+    else if (dynamic_cast<B*>(p))
+        std::cout << "object B called" << std::endl;
+    else if (dynamic_cast<C*>(p))
+        std::cout << "object C called" << std::endl;
+    else if (p == NULL)
+        std::cout << "object NULL " << std::endl;
 }
 
 
@@ -62,6 +69,17 @@ inside this function is forbidden.*/
 
 void Base::identify(Base& p)
 {
-    Base& b = dynamic_cast<Base &>(p);
-    b.print();
+    try {
+        
+        if (dynamic_cast<A*>(&p))
+            std::cout << "object A called ref" << std::endl;
+        else if (dynamic_cast<B*>(&p))
+            std::cout << "object B called ref" << std::endl;
+        else if (dynamic_cast<C*>(&p))
+            std::cout << "object C called ref" << std::endl;
+        
+    } catch (std::bad_cast &e) {
+        
+        std::cout << "Error : " << e.what() << std::endl;
+    }
 }

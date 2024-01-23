@@ -6,13 +6,13 @@
 #    By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/21 22:05:16 by hchaguer          #+#    #+#              #
-#    Updated: 2024/01/22 14:45:24 by hchaguer         ###   ########.fr        #
+#    Updated: 2024/01/23 11:33:37 by hchaguer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Base
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 
 CXX = c++
 
