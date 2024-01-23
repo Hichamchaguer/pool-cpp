@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 22:06:25 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/22 21:44:27 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/23 11:48:47 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class Base {
 
     public:
         virtual ~Base();
-        virtual void print();
         static Base * generate(void);
         static void identify(Base* p);
         static void identify(Base& p);

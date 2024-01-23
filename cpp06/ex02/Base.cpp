@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:24:02 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/23 11:37:29 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/23 11:48:15 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,9 @@ A::~A() { std::cout << "destractor A called " << std::endl; }
 B::~B() { std::cout << "destractor B called " << std::endl; }
 C::~C() { std::cout << "destractor C called " << std::endl; }
 
-void Base::print()
-{
-    std::cout << "this is instance Base " << std::endl;
-}
-
 Base* Base::generate()
 {
-    Base* b = new Base();
+    Base* b;
     srand(time(0));
     int random = rand() % 3;
     
@@ -35,15 +30,12 @@ Base* Base::generate()
     {
         case 0 :
             b = new A();
-            std::cout << "---> " << b << std::endl;
             break;
         case 1 :
             b = new B();
-            std::cout << "---> " << b << std::endl;
             break;
         case 2 :
             b = new C();
-            std::cout << "---> " << b << std::endl;
             break;
     }
     return (b);
