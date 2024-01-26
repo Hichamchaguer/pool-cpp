@@ -5,19 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/21 22:05:16 by hchaguer          #+#    #+#              #
-#    Updated: 2024/01/23 12:21:08 by hchaguer         ###   ########.fr        #
+#    Created: 2024/01/26 17:13:11 by hchaguer          #+#    #+#              #
+#    Updated: 2024/01/26 17:13:20 by hchaguer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Base
+NAME = Array
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CXX = c++
 
-SRC = main.cpp\
-	  Base.cpp
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

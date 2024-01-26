@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/21 22:06:25 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/23 18:57:11 by hchaguer         ###   ########.fr       */
+/*   Created: 2024/01/26 17:13:27 by hchaguer          #+#    #+#             */
+/*   Updated: 2024/01/26 17:52:57 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-#define BASE_HPP
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
 
+#include <cstddef>
 #include <iostream>
-#include <stdlib.h>
 
-class Base {
+template <typename T > 
 
-    public:
-        virtual ~Base();
-        static Base * generate(void);
-        static void identify(Base* p);
-        static void identify(Base& p);
+class Array {
+
+    private :
+     
+        T *tab;
+        const unsigned int N;
+        
+    public :
+      Array<T>() : tab(NULL), N(0) {}
+      Array<T>(const unsigned int &n) : N(n) { 
+        
+        tab = new T[N]; 
+
+        for (std::size_t i = 0; i < n; i++)
+        {
+            std::cout << tab[i] << std::endl;
+        }
+      }
+      
 };
-
-class A : public Base { ~A(); };
- 
-class B : public Base { ~B(); };
- 
-class C : public Base { ~C(); };
-
 
 #endif

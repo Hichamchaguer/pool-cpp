@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 06:27:05 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/20 17:57:44 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/25 22:27:45 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@
 
 int main()
 {
-    const Animal* meta = new Animal();
+    // const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 
-    std::cout << j->get_type() << " " << std::endl;
-    std::cout << i->get_type() << " " << std::endl;
-    i->makeSound();
+    // std::cout << j->get_type() << " " << std::endl;
+    // std::cout << i->get_type() << " " << std::endl;
     j->makeSound();
-    meta->makeSound();
-    delete i;
+    // j->makeSound();
+    // meta->makeSound();
+    // delete i;
     delete j;
-    delete meta;
+    // delete meta;
         
     // const WrongAnimal* m = new WrongAnimal();
 

@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 06:28:33 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/20 17:56:58 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/25 22:20:13 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 #include <iostream>
 #include <string>
 
-class Animal {
+
+ class Animal {
     
     protected :
         std::string Type;

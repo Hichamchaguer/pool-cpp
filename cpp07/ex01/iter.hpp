@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:30:08 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/24 23:24:51 by hchaguer         ###   ########.fr       */
+/*   Created: 2024/01/25 14:41:08 by hchaguer          #+#    #+#             */
+/*   Updated: 2024/01/25 19:21:44 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef ITER_HPP
+#define ITER_HPP
 
-ScalarConverter::ScalarConverter() { }
+#include <iostream>
 
-ScalarConverter::ScalarConverter(const ScalarConverter& s) { 
 
-    *this = s;
+template <typename T , typename F > void iter(T* array, int lenght, F func) {
+    
+    for (int i = 0 ; i < lenght; i++)
+    {
+        func(array[i]);
+    }
 }
 
-ScalarConverter& ScalarConverter::operator=(const ScalarConverter& s) { 
-
-    (void)s;
-    return (*this);
-}
-
-ScalarConverter::~ScalarConverter() { }
-
-void ScalarConverter::convert(std::string &str)
+template<typename T> void print(T& t)
 {
-    (void)str;
+    std::cout << t << std::endl;
 }
+
+
+#endif

@@ -15,18 +15,19 @@
 
 int main()
 {
-    Serializer s;
     Data *data = new Data;
 
     data->i = 42;
 
-    uintptr_t ptr = s.serialize(data);
+    uintptr_t ptr = Serializer::serialize(data);
 
     std::cout << ptr << std::endl;
 
-    Data *d = s.deserialize(ptr);
+    Data *d = Serializer::deserialize(ptr);
 
     std::cout << d->i << std::endl;
+
+    delete data;
 
     return 0;
 }

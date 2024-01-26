@@ -6,12 +6,13 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:24:02 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/23 11:48:15 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:56:35 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 #include <cstddef>
+#include <exception>
 #include <ostream>
 #include <typeinfo>
 
@@ -19,6 +20,8 @@ Base::~Base() { std::cout << "destractor Base called " << std::endl; }
 A::~A() { std::cout << "destractor A called " << std::endl; }
 B::~B() { std::cout << "destractor B called " << std::endl; }
 C::~C() { std::cout << "destractor C called " << std::endl; }
+
+/* It randomly instanciates A, B or C and returns the instance as a Base pointer */
 
 Base* Base::generate()
 {
@@ -45,14 +48,21 @@ Base* Base::generate()
 
 void Base::identify(Base* p)
 {
-    if (dynamic_cast<A*>(p))
-        std::cout << "object A called" << std::endl;
-    else if (dynamic_cast<B*>(p))
-        std::cout << "object B called" << std::endl;
-    else if (dynamic_cast<C*>(p))
-        std::cout << "object C called" << std::endl;
-    else if (p == NULL)
-        std::cout << "object NULL " << std::endl;
+    try {
+        
+        if (dynamic_cast<A*>(p))
+            std::cout << "object A called" << std::endl;
+        else if (dynamic_cast<B*>(p))
+            std::cout << "object B called" << std::endl;
+        else if (dynamic_cast<C*>(p))
+            std::cout << "object C called" << std::endl;
+        else if (p == NULL)
+            throw std::bad_cast();
+    }
+    catch(std::exception& e)
+    {
+        std::cout << "Error : " << e.what() << std::endl;
+    }
 }
 
 

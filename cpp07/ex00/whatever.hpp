@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:30:08 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/24 23:24:51 by hchaguer         ###   ########.fr       */
+/*   Created: 2024/01/25 12:28:47 by hchaguer          #+#    #+#             */
+/*   Updated: 2024/01/25 12:51:57 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 
-ScalarConverter::ScalarConverter() { }
+#include <iostream>
 
-ScalarConverter::ScalarConverter(const ScalarConverter& s) { 
-
-    *this = s;
-}
-
-ScalarConverter& ScalarConverter::operator=(const ScalarConverter& s) { 
-
-    (void)s;
-    return (*this);
-}
-
-ScalarConverter::~ScalarConverter() { }
-
-void ScalarConverter::convert(std::string &str)
+template<typename T> 
+void swap(T& a, T& b)
 {
-    (void)str;
+    T x;
+    
+    x = a;
+    a = b;
+    b = x;
 }
+
+template<typename T> T min(T a, T b)
+{
+    if (a == b)
+        return (b);
+    return (a < b ? a : b);
+}
+
+template<typename T> T max(T a, T b)
+{
+    if (a == b)
+        return (b);
+    return (a > b ? a : b);
+}
+
+
+#endif

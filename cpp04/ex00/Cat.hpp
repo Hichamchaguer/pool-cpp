@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 06:31:06 by hchaguer          #+#    #+#             */
-/*   Updated: 2023/11/20 18:02:29 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/25 22:26:27 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,27 @@
 #include "Animal.hpp"
 
 
+
+ class Animal {
+    
+    protected :
+        std::string Type;
+        
+    public :
+        
+        Animal();
+        Animal(Animal const &animal);
+        Animal& operator=(Animal const &animal);
+        virtual ~Animal();
+        
+        virtual void makeSound() const;
+        std::string get_type() const;
+};
+
 class Cat : public Animal {
 
-    public : 
-
-        Cat();
-        Cat(Cat const &cat);
-        Cat& operator=(Cat const &cat);
-        ~Cat();
-        
-        void makeSound() const;
+    void makeSound() const;
+   
         
 };
 
