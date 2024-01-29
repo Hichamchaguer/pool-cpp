@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:13:27 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/26 17:52:57 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/29 18:32:56 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ class Array {
     private :
      
         T *tab;
-        const unsigned int N;
+        unsigned int N;
         
     public :
+    
       Array<T>() : tab(NULL), N(0) {}
-      Array<T>(const unsigned int &n) : N(n) { 
+      Array<T>(unsigned int &n) : N(n) { 
         
         tab = new T[N]; 
 
@@ -37,6 +38,17 @@ class Array {
         }
       }
       
+      Array<T>(const Array<T> &t)
+      {
+        *this = t;
+      }
+      
+      Array<T> operator=(const Array<T> &t)
+      {
+        this->tab = t.tab;
+        this->N = t.N; 
+        return (*this);
+      }
 };
 
 #endif
