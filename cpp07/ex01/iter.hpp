@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:41:08 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/25 19:21:44 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/01/31 00:49:27 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 #include <iostream>
 
 
-template <typename T , typename F > void iter(T* array, int lenght, F func) {
+template <typename T , typename F > 
+void iter(T* array, int lenght, F func) {
     
     for (int i = 0 ; i < lenght; i++)
     {
