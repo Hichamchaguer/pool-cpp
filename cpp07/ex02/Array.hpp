@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:13:27 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/01/30 18:04:48 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/04 09:45:51 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ class Array {
         tab = new T[N];
       }
       
-      Array<T>(const Array<T> &t) : N(0)
+      Array<T>(Array<T> &t) : N(0)
       {
         *this = t;
       }
       
-      Array<T>& operator=(const Array<T> &t)
+      Array<T>& operator=(Array<T> &t)
       {
         if (N > 0)
           delete tab;

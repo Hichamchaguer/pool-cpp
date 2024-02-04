@@ -5,18 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/26 17:13:11 by hchaguer          #+#    #+#              #
-#    Updated: 2024/02/04 09:41:18 by hchaguer         ###   ########.fr        #
+#    Created: 2024/02/02 20:45:50 by hchaguer          #+#    #+#              #
+#    Updated: 2024/02/02 20:46:28 by hchaguer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Array
+NAME = easyFind
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CXX = c++
 
-SRC = main.cpp
+SRC = main.cpp\
+	  easyfind.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
