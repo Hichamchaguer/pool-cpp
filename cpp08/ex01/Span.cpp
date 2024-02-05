@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 20:46:34 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/05 15:08:27 by hchaguer         ###   ########.fr       */
+/*   Created: 2024/02/05 15:18:25 by hchaguer          #+#    #+#             */
+/*   Updated: 2024/02/05 20:55:28 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
 
+#include "Span.hpp"
 
-int main() {
+Span::Span() { this->N = 0; }
 
-  try {
-    
-    std::array<int, 15> a = {1,2,3,4,5,6,7,8,9,10,11,12,13,15,14};
-    easyfind(a, 10); 
-    
-  }
-  catch(std::exception &e)
-  {
-    std::cout << "Error : " << e.what() << std::endl; 
-  }
-  
-  
-  return 0;
+Span::Span(unsigned int n) : N(n) { }
+
+Span::Span(const Span &s)
+{
+    *this = s;
 }
+
+Span Span::operator=(const Span &s)
+{
+    this->N = s.N;
+    return *this;
+}
+
+void Span::AddNumber(unsigned int n) 
+{
+    int array[this->N];
+    static int i;
+
+    array[i] = n;
+    std::cout << array[i] << std::endl;
+    i++;
+}
+
+Span::~Span() { }
