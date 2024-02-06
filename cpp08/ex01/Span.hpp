@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:20:58 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/06 18:13:16 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/06 18:17:02 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Span {
 
         std::vector<int> vec;
         unsigned int N;
+        std::vector<int> vec;
 
     public :
 
