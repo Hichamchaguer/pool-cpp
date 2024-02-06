@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Span.hpp                                           :+:      :+:    :+:   */
+/*   test.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/05 15:20:58 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/06 18:13:16 by hchaguer         ###   ########.fr       */
+/*   Created: 2024/02/06 15:41:56 by hchaguer          #+#    #+#             */
+/*   Updated: 2024/02/06 15:49:05 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN_HPP
-#define SPAN_HPP
-
 #include <iostream>
+#include <algorithm>
 #include <vector>
 
-class Span {
+int main()
+{
+    std::vector<int> vec;
 
-    private :
+    vec.push_back(11);
+    vec.push_back(1);
+    vec.push_back(10);
+    vec.push_back(41);
+    vec.push_back(5);
 
-        std::vector<int> vec;
-        unsigned int N;
-
-    public :
-
-        Span();
-        Span(const Span &s);
-        Span operator=(const Span &s);
-        ~Span();
-
-        Span(unsigned int n);
-        void    AddNumber(int n);
-        int     shortestSpan();
-      
-};
-
-#endif
+    
+    std::sort(std::begin(vec), std::end(vec));
+    
+    for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)
+    {
+        std::cout << *it << std::endl;
+    }
+}
