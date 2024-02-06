@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:20:58 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/06 18:17:02 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/06 18:39:42 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 class Span {
 
@@ -22,7 +23,6 @@ class Span {
 
         std::vector<int> vec;
         unsigned int N;
-        std::vector<int> vec;
 
     public :
 
@@ -34,6 +34,7 @@ class Span {
         Span(unsigned int n);
         void    AddNumber(int n);
         int     shortestSpan();
+        int    longestSpan();
       
 };
 

@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:20:16 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/06 18:16:58 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/06 20:11:04 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int main()
 
         s.AddNumber(3);
         s.AddNumber(5);
-        s.AddNumber(4);
+        s.AddNumber(100);
         s.AddNumber(1);
         s.AddNumber(6);
         
-        int i = s.shortestSpan();
-        std::cout << i << std::endl;
+        int i = s.longestSpan();
+        std::cout << "longest span : "<<i << std::endl;
     }
     catch(std::exception &e)
     {
