@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:18:25 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/05 20:55:28 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/06 01:08:23 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,13 @@ Span Span::operator=(const Span &s)
     return *this;
 }
 
-void Span::AddNumber(unsigned int n) 
+void Span::AddNumber(int n) 
 {
-    int array[this->N];
-    static int i;
-
-    array[i] = n;
-    std::cout << array[i] << std::endl;
-    i++;
+    std::cout << vec.size() << std::endl;  // use static variable 
+    if (this->vec.size() == this->N)
+        throw std::runtime_error("Vector is already filled");
+    else
+        this->vec.push_back(n);
 }
 
 Span::~Span() { }
