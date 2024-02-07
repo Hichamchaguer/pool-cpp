@@ -5,27 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 20:46:34 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/07 20:24:21 by hchaguer         ###   ########.fr       */
+/*   Created: 2024/02/07 16:12:48 by hchaguer          #+#    #+#             */
+/*   Updated: 2024/02/07 22:25:37 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
+#include "MutantStack.hpp"
 
-
-int main() {
-
-  try {
+int main()
+{
+    MutantStack<int> mstack;
+    mstack.push(5);
+    mstack.push(17);
+    std::cout << mstack.top() << std::endl;
+    mstack.pop();
+    std::cout << mstack.size() << std::endl;
+    mstack.push(3);
+    mstack.push(5);
+    mstack.push(737);
     
-    std::array<int, 15> a = {1,2,3,4,5,6,7,8,9,10,11,12,13,15,14};
-    easyfind(a, 10); 
-    
-  }
-  catch(std::exception &e)
-  {
-    std::cout << "Error : " << e.what() << std::endl;
-  }
-  
-  
-  return 0;
+    // [...]
+    mstack.push(0);
+    MutantStack<int>::iterator it = mstack.begin();
+    MutantStack<int>::iterator ite = mstack.end();
+    ++it;
+    --it;
+    while (it != ite)
+    {
+    std::cout << *it << std::endl;
+        ++it;
+    }
+    std::stack<int> s(mstack);
+    return 0;
 }

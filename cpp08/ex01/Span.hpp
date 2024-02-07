@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:20:58 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/06 18:39:42 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/07 14:16:36 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ class Span {
         ~Span();
 
         Span(unsigned int n);
-        void    AddNumber(int n);
+        void    addNumber(int n);
         int     shortestSpan();
         int    longestSpan();
+        void    addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
       
 };
 
