@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 14:13:43 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/09 15:55:47 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/10 13:36:36 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int main(int ac, char** av)
     }
 
     BitcoinExchange b;
+
+    b.exchange(av);
     
     return 0;
 }
