@@ -6,61 +6,44 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:05:07 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/11 04:03:08 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/14 05:27:49 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstddef>
+#include <deque>
 #include <set>
 #include <iostream>
 #include <map>
+#include <set>
+#include <algorithm>
+#include <vector>
+#include <stack>
+#include <utility>
+
+using namespace std;
 
 int main()
 {
-
-    std::map<int ,int> map;
-    int o = 2;
-
-    for (size_t i = 0; i < 10; i++)
-    {
-        map[i] = i;
-    }
-
-    std::map<int,int>::iterator it;
-    for (it = map.begin(); it != map.end(); ++it)
-        std::cout << it->first << " " << it->second <<std::endl;
-
-    it  = map.find(2);
-    map.erase(it);
-
-    it = map.lower_bound(o);
-    std::cout << "---> " << it->first << std::endl;
-    std::cout << " ---------------------" << std::endl;
-    // for (it = map.begin(); it != map.end(); ++it)
-    //     std::cout << it->first << " " << it->second <<std::endl;
-    
-    // map.lower_bound()
-    // std::map<std::string ,int> _map;
-
-    // _map.insert({"hicham", 1});
-    // _map.insert({"am", 12});
-    // _map.insert({"hich", 13});
-
-
-    // std::map<std::string, int>::iterator it;
-
-    // for (it = _map.begin(); it != _map.end(); ++it)
-    // {
-    //     std::cout <<"name : " << it->first << ", number : "<<it->second << std::endl;
-    
-    // }
-    
-    // std::cout <<  "---------------\n";
-    // it = _map.erase(_map.find("hicham"));
-    // for (it = _map.begin(); it != _map.end(); ++it)
-    // {
-    //     std::cout <<"name : " << it->first << ", number : "<<it->second << std::endl;
-    
-    // }
-
+    vector<int> v1; 
+    int i; 
+  
+    for (i = 0; i < 3; ++i) { 
+        v1.push_back(i); 
+    } 
+    // v1 contains 0 1 2 3 4 5 6 7 8 9 
+  
+    vector<int>::iterator i1, i2; 
+  
+    i1 = v1.begin(); 
+    i2 = v1.end() - 1; 
+  
+    // Performing swap between first and last element 
+    // of vector 
+    std::iter_swap(i1, i2); 
+  
+    // Displaying v1 after swapping 
+    for (i = 0; i < 3; ++i) { 
+        cout << v1[i] << " "; 
+    } 
 }

@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 17:04:02 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/11 07:03:59 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/11 14:23:01 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,10 +155,11 @@ void BitcoinExchange::exchange(char **av)
     std::ifstream input(av[1]);
     std::string line;
 
+    if (!input.is_open())
+        std::cerr << "failed to open file " << av[1] << std::endl;
     std::getline(input, line);
     while (std::getline(input, line))
     {
-        // std::cout << "line : "  << line << std::endl;
         if (BitcoinExchange::parse_line(line) == false)
             continue;
         std::istringstream iss(line);
