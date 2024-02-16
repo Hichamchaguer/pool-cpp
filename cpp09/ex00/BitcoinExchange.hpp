@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:12:25 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/11 02:40:19 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/15 22:43:39 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <map>
 #include <fstream>
+#include <string>
 #include <sstream>
 #include <ctime>
 

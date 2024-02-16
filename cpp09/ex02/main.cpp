@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 04:01:06 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/14 01:27:09 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/15 19:01:55 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 int main(int ac, char **av)
 {
 
-    if (ac == 1)
+    if (ac <= 2)
     {
-        std::cerr << "Invalid argument " << std::endl;
+        std::cerr << "Error : Invalid argument " << std::endl;
         return 1;
     }
     
-    try{
+    try {
         
         PMergeMe merge;
 
@@ -31,7 +31,7 @@ int main(int ac, char **av)
     }
     catch(std::exception& e)
     {
-        std::cout << e.what() << std::endl;
+        std::cout << "Error : "<< e.what() << std::endl;
     }
         
     return 0;

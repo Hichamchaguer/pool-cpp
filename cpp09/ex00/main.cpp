@@ -6,11 +6,12 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 14:13:43 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/10 13:36:36 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/15 22:36:22 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+#include <exception>
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -25,9 +26,15 @@ int main(int ac, char** av)
         return 1;
     }
 
-    BitcoinExchange b;
-
-    b.exchange(av);
+    try {
+        
+        BitcoinExchange b;
+        b.exchange(av);
+        
+    } catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
+    
     
     return 0;
 }

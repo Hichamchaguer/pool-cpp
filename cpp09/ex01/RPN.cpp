@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 16:20:51 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/13 02:11:47 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/15 23:18:44 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,12 +98,12 @@ void RPN::calculator(char *str)
                 if (s1 != 0)
                     result = s2 / s1;
                 else
-                    throw std::invalid_argument("Error : invalid argument 2 ");
+                    throw std::invalid_argument("Error : invalid argument");
             }
             this->Stack.push(result);
         }
         else
-            throw std::invalid_argument("Error : invalid argument 3 ");
+            throw std::invalid_argument("Error : invalid argument");
     }
 
     if (this->Stack.size() <= 2 && etat == false)

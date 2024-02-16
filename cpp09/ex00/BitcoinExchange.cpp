@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 17:04:02 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/11 14:23:01 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/15 23:18:09 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,9 @@ BitcoinExchange::BitcoinExchange()
         if (std::getline(iss, date, ',') && iss >> value)
             this->Map[date] = value;
     }
-
-    // for (std::map<std::string, float>::iterator it = this->Map.begin();
-    //         it != this->Map.end(); ++it)
-    // {
-    //     std::cout << it->first << " | " << it->second << std::endl;
-    // }
 }
 
-bool BitcoinExchange::parse_line(std::string line) // --2 noting
+bool BitcoinExchange::parse_line(std::string line)
 {
     int input = std::atoi(line.c_str());
     if (!(input))
@@ -73,41 +67,42 @@ bool BitcoinExchange::parse_line(std::string line) // --2 noting
             if (c == 2)
             {
                 std::cerr << "Error" << std::endl;
-            return false;
+                return false;
             }
             continue;
         }
         else {
-    
+            
             std::cerr << "Error" << std::endl;
             return false;
         }
     }
-    if (line.substr(0,4) < "2009" || line.substr(8,2) <= "01")
-    {
-        std::cerr << "Error : not found in DB " << std::endl;
-        return false;
-    }
+    
     int y = std::atoi(line.substr(0,4).c_str());
     if (line.substr(5,2) == "02")
     {
         if ((y % 4 == 0) && line.substr(8,2) > "29")
         {
-            std::cerr << "Error : invalide date " << line.substr(0,10) << std::endl;
+            std::cerr << "Error: bad input => " << line.substr(0,10) << std::endl;
             return false;
         }
         else if ((y % 4 != 0) && line.substr(8,2) > "28")
         {
-            std::cerr << "Error : invalide date " << line.substr(0,10) << std::endl;
+            std::cerr << "Error: bad input => " << line.substr(0,10) << std::endl;
             return false;
         }
     }
     if((line.substr(5,2) == "04" || line.substr(5,2) == "06" || line.substr(5,2) == "09"
        || line.substr(5,2) == "11") && line.substr(8,2) == "31")   // 4 6 9 11
     {
-        std::cerr << "Error syntax input" << std::endl;           /* checking " | " format */
+        std::cerr << "Error: bad input => " << line.substr(0,10) <<std::endl;           /* checking " | " format */
         return false;
-    } 
+    }
+    if (line.substr(0,4) < "2009" || line.substr(8,2) <= "01")
+    {
+        std::cerr << "Error: bad input => " << line.substr(0,10) <<std::endl;
+        return false;
+    }
     if(!(line.substr(10,3) == " | "))
     {
         std::cerr << "Error syntax input" << std::endl;          /* checking " | " format */
@@ -142,9 +137,12 @@ bool BitcoinExchange::parse_date_and_value(std::string date, float value)
         std::cerr << "Error: bad input => " << date << std::endl;
         return false;
     }
-    if (value < 0 || value > 1000)
+    if (value <= 0 || value >= 1000)
     {
-        std::cerr << "invalid value " << std::endl;
+        if (value <= 0)
+            std::cerr << "Error: not a positive number." << std::endl;
+        else
+            std::cerr << "Error: too large a number." << std::endl;;
         return false;
     }
     return true;
@@ -155,9 +153,20 @@ void BitcoinExchange::exchange(char **av)
     std::ifstream input(av[1]);
     std::string line;
 
+   
     if (!input.is_open())
-        std::cerr << "failed to open file " << av[1] << std::endl;
+    {
+        std::cerr << "failed to open file " << "'"<< av[1] << "'" << std::endl;
+        return ; 
+    }
     std::getline(input, line);
+    if(line != "date | value")
+    {
+        std::cerr << "Error syntax input" << std::endl;          /* checking " | " format */
+        return ;
+    }
+    else
+        std::cout << line << std::endl;
     while (std::getline(input, line))
     {
         if (BitcoinExchange::parse_line(line) == false)

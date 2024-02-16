@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:05:07 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/14 05:27:49 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/14 17:13:01 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,29 @@ int main()
     for (i = 0; i < 3; ++i) { 
         cout << v1[i] << " "; 
     } 
+
+
+     // int i = 0, j = 0, k = start;
+    // while (i < left_size && j < right_size) {
+    //         if (left[i].first <= right[j].first) {
+    //             vec[k] = left[i];
+    //             ++i;
+    //         } else {
+    //             vec[k] = right[j];
+    //             ++j;
+    //         }
+    //         ++k;
+    //     }
+
+    //     while (i < left_size) {
+    //         vec[k] = left[i];
+    //         ++i;
+    //         ++k;
+    //     }
+
+    //     while (j < right_size) {
+    //         vec[k] = right[j];
+    //         ++j;
+    //         ++k;
+    //     }
 }

@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 20:47:14 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/05 15:17:55 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/15 16:56:55 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 #define EASYFIND_HPP
 
 #include <iostream>
+#include <stdexcept>
 #include <vector>
-#include <array>
+#include <deque>
+
 
 
 template < typename T> 
 void easyfind(T array, int i) {
 
     bool etat = false;
+    
     
     for (size_t j = 0; j < array.size(); j++)
     {
@@ -33,7 +36,7 @@ void easyfind(T array, int i) {
         }
     }
     if (etat == false)
-        throw std::exception();
+        throw std::invalid_argument("the number was not found");
     
 }
 
