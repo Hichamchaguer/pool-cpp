@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 14:25:39 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/12 23:58:54 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/16 17:57:50 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <stack>
+#include <cstring>
 
 class RPN
 {

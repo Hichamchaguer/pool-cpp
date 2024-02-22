@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 16:20:51 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/15 23:18:44 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/17 00:46:31 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <cstddef>
 #include <exception>
 #include <iostream>
+#include <iterator>
 #include <ostream>
 #include <stack>
 #include <stdexcept>
@@ -37,39 +38,13 @@ bool RPN::check_operator(char *str, int i)
     return false;
 }
 
-bool RPN::check_args(char *str)
-{
-    for (int i = 0; i < str[i]; i++)
-    {
-        if (isspace(str[i]))
-            continue;
-        if ((str[i] && check_operator(str, i) && isspace(str[i + 1])) || 
-            (check_operator(str, i) && str[i + 1] == '\0') || 
-                (str[i] && isdigit(str[i]) && isspace(str[i + 1])))
-            continue;
-        else
-            throw std::invalid_argument("Error : invalid argument");
-    }
-    
-    for (int i = 0; i < str[i]; i++)
-    {
-        if (isspace(str[i]))
-            continue;
-        else if (check_operator(str, i) == true)
-            continue;
-        else if (!isdigit(str[i]))
-            throw std::invalid_argument("Error : invalid argument");
-    }
-    return true;
-}
-
-
 void RPN::calculator(char *str)
 {
-    int i = 0, s1 = 0, s2 = 0, result;
+    size_t i = 0;
+    int s1 = 0, s2 = 0, result;
     bool etat = false;
 
-    for(i = 0; i < str[i]; i++)
+    for(i = 0; i < strlen(str); i++)
     {
         result = 0;
         if(isspace(str[i]))
@@ -112,7 +87,6 @@ void RPN::calculator(char *str)
 
 void RPN::result(char *str)
 {
-    check_args(str);
     calculator(str);
     
     if (this->Stack.size() == 1)

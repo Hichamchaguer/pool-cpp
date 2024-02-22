@@ -6,7 +6,7 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 17:04:02 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/15 23:18:09 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/17 00:32:01 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,6 @@ bool BitcoinExchange::parse_line(std::string line)
             }
             continue;
         }
-        else {
-            
-            std::cerr << "Error" << std::endl;
-            return false;
-        }
     }
     
     int y = std::atoi(line.substr(0,4).c_str());
@@ -115,7 +110,10 @@ bool BitcoinExchange::parse_line(std::string line)
             i++;
             if (isspace(line[i]) && (!isdigit(line[i + 1])))
             {
-                std::cerr << "Error " << std::endl;
+                if (line[i + 1] == '-')
+                    std::cerr << "Error: not a positive number." << std::endl;
+                else
+                    std::cerr << "Error " << std::endl;
                 return false;
             }
             if (isspace(line[i]) && isspace(line[i + 1]))
@@ -139,9 +137,7 @@ bool BitcoinExchange::parse_date_and_value(std::string date, float value)
     }
     if (value <= 0 || value >= 1000)
     {
-        if (value <= 0)
-            std::cerr << "Error: not a positive number." << std::endl;
-        else
+        if (value > 1000)
             std::cerr << "Error: too large a number." << std::endl;;
         return false;
     }
@@ -165,8 +161,6 @@ void BitcoinExchange::exchange(char **av)
         std::cerr << "Error syntax input" << std::endl;          /* checking " | " format */
         return ;
     }
-    else
-        std::cout << line << std::endl;
     while (std::getline(input, line))
     {
         if (BitcoinExchange::parse_line(line) == false)

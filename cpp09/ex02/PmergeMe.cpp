@@ -6,20 +6,11 @@
 /*   By: hchaguer <hchaguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 04:02:16 by hchaguer          #+#    #+#             */
-/*   Updated: 2024/02/15 21:52:46 by hchaguer         ###   ########.fr       */
+/*   Updated: 2024/02/17 06:50:47 by hchaguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
-#include <algorithm>
-#include <cctype>
-#include <cstddef>
-#include <ctime>
-#include <functional>
-#include <iostream>
-#include <ostream>
-#include <stdexcept>
-#include <cstring>
 
 
 PMergeMe::PMergeMe() { }
@@ -106,18 +97,6 @@ void PMergeMe::sort(size_t size)
     sort(size - 1);
 }
 
-void PMergeMe::sort_fist_second()
-{
-    std::vector<std::pair<int, int> >::iterator it;
-    
-    for (it = this->vec.begin(); it != this->vec.end(); ++it)
-    {
-        if (it->first < it->second)
-            std::swap(it->first, it->second);
-    }
-    sort(this->vec.size());
-}
-
 
 void PMergeMe::fill_vec(std::vector<int>& v,int ac)
 {
@@ -164,7 +143,6 @@ void PMergeMe::merge_sort_dec(int ac, char** av)
     time = clock();
     swap_pairs_dec();
     sort_dec(this->dec.size());
-    sort_fist_second_dec();
     fill_dec(d, ac);
     time = clock() - time;
 
@@ -203,18 +181,6 @@ void PMergeMe::sort_dec(size_t size)
             std::swap(this->dec[i].first, this->dec[i+1].first);
     }
     sort_dec(size - 1);
-}
-
-void PMergeMe::sort_fist_second_dec()
-{
-    std::deque<std::pair<int, int> >::iterator it;
-    
-    for (it = this->dec.begin(); it != this->dec.end(); ++it)
-    {
-        if (it->first < it->second)
-            std::swap(it->first, it->second);
-    }
-    sort_dec(this->dec.size());
 }
 
 
@@ -265,7 +231,6 @@ void PMergeMe::merge_sort(int ac, char** av)
     time = clock();
     swap_pairs();
     sort(this->vec.size());
-    sort_fist_second();
     fill_vec(v, ac);
     time = clock() - time;
     
